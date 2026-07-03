@@ -74,7 +74,6 @@
 | **InsightForgeAI** | Used for generating Next Level report. | Agentic AI, FastApi, React |
 | **Website Vulnerability(OSINT)** | Based on the security of the websites. | Cryptography | 
 | **AI_MockInterview** | Checks the level of yourself using MOCK interview. | Python, FastApi |
-> Tip: Pin your best 3–6 repos on your profile and link them here.
 
 ---
 
