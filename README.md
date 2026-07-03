@@ -25,7 +25,7 @@
 ## 🧑‍💻 About Me
 
 - 🔭 I’m currently working on: **Security Projects and AI Projects**
-- 🚀 I’m also doing the : **Freelancing (Web and App Devolopment**
+- 🚀 I’m also doing the : **Freelancing (Web and App Devolopment)**
 - 🌱 I’m learning: **Python**, **LLM**, **Agentic-AI**
 - 🎯 I’m focused on: **Full Stack and AI Based**
 - 💬 Ask me about: **Projects**, **Business**, **AI Tools**
