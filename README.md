@@ -1,126 +1,146 @@
-<!--
-  GitHub Profile README for YOUR_NAME
-  Tip: Create a repo named exactly like your username (e.g. github.com/YOUR_USERNAME/YOUR_USERNAME)
-       and put this content in README.md. It will automatically show on your profile.
--->
+#!/usr/bin/env python3
+"""
+generate_readme.py
+Simple GitHub profile README generator.
+Saves README.md in current directory.
+"""
 
-<!-- Profile Header -->
-<h1 align="center">
-  👋 Hi, I'm Likethan K J 
-</h1>
+import os
+import json
+import textwrap
+from datetime import datetime
+try:
+    # Python 3 standard lib
+    from urllib.request import urlopen, Request
+except Exception:
+    urlopen = None
 
-<p align="center">
-  <strong>Full Stack Devoloper </strong> · <strong>MERN Stack</strong> · <strong>2+ years of experience</strong><br>
-  <em>Building cool stuff with code · Coimbatore, India</em>
-</p>
+def input_default(prompt, default=""):
+    val = input(f"{prompt} [{'Enter' if default=='' else default}]: ").strip()
+    return val if val else default
 
-<p align="center">
-  <!-- Optional: Add a small banner or tech collage image here -->
-  <!-- <img src="https://..." alt="profile banner" width="100%" /> -->
-</p>
+def fetch_github_user(username):
+    if not username or urlopen is None:
+        return None
+    url = f"https://api.github.com/users/{username}"
+    req = Request(url, headers={"User-Agent": "readme-generator"})
+    try:
+        with urlopen(req, timeout=10) as resp:
+            return json.load(resp)
+    except Exception:
+        return None
 
----
+def generate_badges(username, languages=None):
+    badges = []
+    if username:
+        badges.append(f"[![GitHub followers](https://img.shields.io/github/followers/{username}?label=Follow&style=social)](https://github.com/{username})")
+        badges.append(f"[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact)](https://github.com/{username})")
+        badges.append(f"[![Stats](https://github-readme-stats.vercel.app/api?username={username}&show_icons=true&count_private=true&theme=default)](https://github.com/{username})")
+    if languages:
+        # languages is a list; show as simple badges
+        for lang in languages[:5]:
+            badges.append(f"![{lang}](https://img.shields.io/badge/-{lang}-blue?style=flat-square)")
+    return " ".join(badges)
 
-<!-- About Me -->
-## 🧑‍💻 About Me
+def make_projects_section(projects):
+    if not projects:
+        return ""
+    lines = ["## Projects\n"]
+    for p in projects:
+        title = p.get("name","Untitled")
+        desc = p.get("desc","No description.")
+        url = p.get("url","")
+        if url:
+            lines.append(f"- [{title}]({url}) — {desc}")
+        else:
+            lines.append(f"- **{title}** — {desc}")
+    return "\n".join(lines) + "\n"
 
-- 🔭 I’m currently working on: **Security Projects and AI Projects**
-- 🚀 I’m also doing the : **Freelancing (Web and App Devolopment)**
-- 🌱 I’m learning: **Python**, **LLM**, **Agentic-AI**
-- 🎯 I’m focused on: **Full Stack and AI Based**
-- 💬 Ask me about: **Projects**, **Business**, **AI Tools**
-- 📫 How to reach me: **likethankj751@gmail.com**
-- ⚡ Fun fact: **Extrovert**
+def main():
+    print("GitHub README.md generator\n")
+    username = input_default("GitHub username", "")
+    name = input_default("Display name (Full name)", username)
+    short_bio = input_default("One-line bio (what you do)", "Software developer | Open-source enthusiast")
+    long_bio = input_default("Longer bio (2-3 sentences)", "")
+    highlights = input_default("Top achievements / one-line bullets (comma-separated)", "")
+    languages = input_default("Top languages/tech (comma-separated)", "")
+    projects_raw = input_default("Add projects? (format: name|desc|url ; semicolon-separated)", "")
+    contact = input_default("Email or contact line", "")
+    linkedin = input_default("LinkedIn URL (optional)", "")
+    twitter = input_default("Twitter handle (optional, without @)", "")
 
----
+    gh_data = fetch_github_user(username) if username else None
+    public_repos = gh_data.get("public_repos") if gh_data else None
+    followers = gh_data.get("followers") if gh_data else None
 
-<!-- Tech Stack -->
-## 🛠️ Tech Stack
+    # Transform inputs
+    top_langs = [s.strip() for s in languages.split(",") if s.strip()]
+    projects = []
+    if projects_raw.strip():
+        for item in projects_raw.split(";"):
+            parts = [p.strip() for p in item.split("|")]
+            if len(parts) >= 3:
+                projects.append({"name":parts[0],"desc":parts[1],"url":parts[2]})
+            elif len(parts) == 2:
+                projects.append({"name":parts[0],"desc":parts[1],"url":""})
+            elif parts[0]:
+                projects.append({"name":parts[0],"desc":"","url":""})
 
-<p align="center">
-  <!-- Use shields.io or gh-xl/skill-icons for nicer icons -->
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="Python" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="React.js" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="MERN Stack" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Rest API's" />
-  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
-  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="Pandas" />
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Numpy" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Jupyter Notebook" />
-  <!-- Add/remove badges based on your actual stack -->
-</p>
+    badges_md = generate_badges(username, top_langs)
 
-<!-- Optional: GitHub Stats Widgets -->
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=dark&hide_border=true" alt="GitHub Streak Stats" />
-  <img src="https://github-readme-stats.vercel.app/api?username=Likethan K J&show_icons=true&theme=dark&hide_border=true&count_private=true" alt="GitHub Stats" />
-</p>
+    # Build README content
+    created = datetime.utcnow().strftime("%Y-%m-%d")
+    lines = []
+    lines.append(f"# Hi, I'm {name} 👋")
+    lines.append("")
+    lines.append(badges_md)
+    lines.append("")
+    lines.append(short_bio)
+    lines.append("")
+    if long_bio:
+        lines.append(long_bio)
+        lines.append("")
+    if highlights:
+        lines.append("## Highlights")
+        for h in [x.strip() for x in highlights.split(",") if x.strip()]:
+            lines.append(f"- {h}")
+        lines.append("")
+    if top_langs:
+        lines.append("## Skills")
+        lines.append(", ".join(top_langs))
+        lines.append("")
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=dark&hide_border=true" alt="Top Languages" />
-</p>
+    if public_repos is not None or followers is not None:
+        lines.append("## GitHub")
+        if public_repos is not None:
+            lines.append(f"- Public repos: **{public_repos}**")
+        if followers is not None:
+            lines.append(f"- Followers: **{followers}**")
+        lines.append("")
 
----
+    lines.append(make_projects_section(projects))
+    contact_lines = []
+    if contact:
+        contact_lines.append(f"- Email: {contact}")
+    if linkedin:
+        contact_lines.append(f"- LinkedIn: [{linkedin}]({linkedin})")
+    if twitter:
+        contact_lines.append(f"- Twitter: [@{twitter}](https://twitter.com/{twitter})")
+    if contact_lines:
+        lines.append("## Contact")
+        lines.extend(contact_lines)
+        lines.append("")
 
-<!-- Featured Projects -->
-## 🚀 Featured Projects
+    lines.append("---")
+    lines.append(f"_README generated on {created}_")
+    content = "\n".join(lines).strip() + "\n"
 
-| Project | Description | Tech Stack |
-|--------|-------------|-----------|
-| **InsightForgeAI** | Used for generating Next Level report. | Agentic AI, FastApi, React |
-| **Website Vulnerability(OSINT)** | Based on the security of the websites. | Cryptography | 
-| **AI_MockInterview** | Checks the level of yourself using MOCK interview. | Python, FastApi |
+    out = "README.md"
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(content)
 
----
+    print(f"README.md written to ./{out}")
+    print("Open it, tweak, and commit to your profile repository (create a repo named the same as your GitHub username)")
 
-## 🏆 Achievements & Highlights
-
-- 🏅 **Lead an event** – e.g., “Had been Lead an event in the college Symposium”
-- 🎓 **Finalist in Hackathon** – e.g., “Participated and been a finalistin the KPR hackathon (National Level)”
-- 🏆 **Got an Internship** – Got an internship Offerletter as paid one
-
----
-
-## 📈 GitHub Activity
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=YOUR_USERNAME&theme=dark" alt="Profile Summary" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=dark&hide_border=true" alt="Contribution Graph" />
-</p>
-
----
-
-## 📬 Connect With Me
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  <a href="likethankj751@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="likethan-portfolio-eohs.vercel.app">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=about.me&logoColor=white" alt="Portfolio" />
-  </a>
-</p>
-
----
-
-<!-- Optional: Footer -->
-<p align="center">
-  <em>Thanks for visiting my profile! If you like my work, feel free to connect or collaborate. 🚀</em>
-</p>
-
-<!--
-  Credits:
-  - GitHub Readme Stats: https://github.com/anuraghazari/github-readme-stats
-  - GitHub Streak Stats: https://github.com/DenverCoder1/github-readme-streak-stats
-  - Shields.io Badges: https://shields.io/
-  - GitHub Profile Summary Cards: https://github.com/vn7n24fzkq/github-profile-summary-cards
--->
+if __name__ == "__main__":
+    main()
