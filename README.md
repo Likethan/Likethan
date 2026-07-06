@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Likethan K J</h1>
+[<h1 align="center">Hi 👋, I'm Likethan K J</h1>
 <h3 align="center">Full Stack Developer and Freelancer</h3>
 
 <p align="center">
@@ -36,3 +36,5 @@ I am a curious learner who enjoys exploring new ideas, solving practical problem
 <p align="center">
   <i>Developer | Learner | Freelancer</i>
 </p>
+](https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true
+)
