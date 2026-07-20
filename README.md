@@ -1,28 +1,113 @@
-Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) My name is Likethan K J
-=====================================================================================================================================
+<div align="center">
 
-Full Stack Devoloper
---------------------
+  # ⚡ Hi, I'm Likethan K J 👋
+  ### **AI & Data Science Student | Full-Stack Software Developer**
 
-Hi, I’m Likethan K J, a developer from Coimbatore, Tamil Nadu, passionate about building useful, clean, and practical digital experiences. I enjoy exploring modern technologies, learning by doing, and turning ideas into real projects. I’m always looking to improve my skills, contribute to meaningful work, and create solutions that are simple, efficient, and user-friendly.
+  <p align="center">
+    <a href="https://likethan-portfolio-eohs.vercel.app">🌐 Personal Portfolio</a> •
+    <a href="mailto:your-email@example.com">📧 Email Me</a> •
+    <a href="https://linkedin.com/in/YOUR-LINKEDIN">💼 LinkedIn</a>
+  </p>
 
-My GitHub is where I share my learning journey, personal projects, and experiments with code. I’m especially interested in technology that solves real problems and helps people work smarter. Outside of coding, I value continuous growth, creativity, and consistency.
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2E6FEA&width=500&lines=AI+%26+Data+Science+Engineer;Building+Scalable+Web+Apps;Machine+Learning+%26+Deep+Learning;IoT+%26+Smart+Systems" alt="Typing SVG" />
 
-* 🌍  I'm based in India
-* 🖥️  See my portfolio at [likethan-portfolio-eohs.vercel.app](http://likethan-portfolio-eohs.vercel.app)
-* ✉️  You can contact me at [likethankj751@gmail.com](mailto:likethankj751@gmail.com)
-* 🚀  I'm currently working on [Security Based Project](http://likethan-portfolio-eohs.vercel.app)
-* 🧠  I'm currently learning Python, and other AI Tools
-* 👥  I'm looking to collaborate on Projects and the Websites
-* 💬  Ask me about As a Freelancer I am eager to build projects for my clients
+</div>
 
-<p align="left">
-<a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" title="Python" width="36" height="36" /></a><a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" alt="Git" title="Git" width="36" height="36" /></a><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg" alt="VS Code" title="VS Code" width="36" height="36" /></a><a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" alt="React" title="React" width="36" height="36" /></a><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" alt="HTML5" title="HTML5" width="36" height="36" /></a><a href="https://vitejs.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg" alt="Vite" title="Vite" width="36" height="36" /></a><a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" alt="NodeJS" title="NodeJS" width="36" height="36" /></a><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/fastapi-colored.svg" alt="Fast API" title="Fast API" width="36" height="36" /></a><a href="https://supabase.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/supabase-colored.svg" alt="Supabase" title="Supabase" width="36" height="36" /></a><a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" alt="MySQL" title="MySQL" width="36" height="36" /></a><a href="https://www.figma.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" alt="Figma" title="Figma" width="36" height="36" /></a><a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/photoshop-colored-dark.svg" alt="Photoshop" title="Photoshop" width="36" height="36" /></a><a href="https://filebase.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/filebase-colored.svg" alt="Filebase" title="Filebase" width="36" height="36" /></a><a href="https://cloud.google.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/googlecloud-colored.svg" alt="Google Cloud" title="Google Cloud" width="36" height="36" /></a><a href="https://store.arduino.cc/?gclid=Cj0KCQjw2eilBhCCARIsAG0Pf8uueBifykWcsSS4LPESeGQfxGVKJYnzV7bz471XfknQJy_1VINVWM8aAkLtEALw_wcB" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/arduino-colored.svg" alt="Arduino" title="Arduino" width="36" height="36" /></a><a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/django-colored-dark.svg" alt="Django" title="Django" width="36" height="36" /></a><a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tensorflow-colored.svg" alt="TensorFlow" title="TensorFlow" width="36" height="36" /></a><a href="https://pytorch.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/pytorch-colored.svg" alt="PyTorch" title="PyTorch" width="36" height="36" /></a><a href="https://www.docker.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg" alt="Docker" title="Docker" width="36" height="36" /></a>
+---
+
+## 👨‍💻 About Me
+
+I am a forward-thinking **AI & Data Science Engineer** passionate about turning data into actionable intelligence and building high-performance web applications. My work spans predictive modeling, computer vision, data analytics, and modern full-stack web architectures.
+
+- 🔭 **Currently Working On:** Developing intelligent web architectures & refining ML models for real-time predictions.
+- 💼 **Experience:** Former Data Analytics Intern at **NoviTech R&D** | Incoming Intern at **Axlero Solutions**.
+- 🛠 **Core Strengths:** Predictive Analytics, Full-Stack Development, Smart Systems (IoT), & Cloud Infrastructure.
+- 🏆 **Achievements:** Hackathon winner, open-source contributor, and certified in Machine Learning & Cloud Technologies.
+- ⚡ **Fun Fact:** I love solving complex technical puzzles and turning abstract ideas into production-ready software.
+
+---
+
+## 🚀 Featured Work & Projects
+
+| Project | Tech Stack | Highlights | Live Demo / Repo |
+| :--- | :--- | :--- | :---: |
+| **🚥 Smart Traffic System** | `Python` `OpenCV` `YOLO` `ML` | Computer vision model that dynamically adjusts signal timings based on real-time traffic volume. | [View Code](#) |
+| **🌍 Carbon Footprint Predictor** | `Python` `Scikit-Learn` `Pandas` | Predictive analytics tool that estimates carbon emissions using historical & operational data. | [View Code](#) |
+| **🌱 Smart Agriculture Platform** | `Python` `IoT` `Data Analytics` | ML-backed dashboard giving real-time crop health monitoring and yield optimization advice. | [View Code](#) |
+| **💼 Developer Portfolio** | `React` `Tailwind CSS` `Vercel` | Modern, responsive portfolio showcasing developer experience, skills, and projects. | [Live Site](https://likethan-portfolio-eohs.vercel.app) |
+
+---
+
+## 🛠 Tech Stack & Toolkit
+
+<div align="center">
+
+### **Languages & Core**
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
 </p>
 
-### Socials
+### **AI, Data Science & Machine Learning**
+<p>
+  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
+  <img src="https://img.shields.io/badge/Data_Analytics-008080?style=for-the-badge&logo=googleanalytics&logoColor=white" />
+</p>
 
-<p align="left"> <a href="https://www.github.com/Likethan K J" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" alt="GitHub" title="GitHub" /> </picture> </a> <a href="https://www.linkedin.com/in/https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true" target="_blank" rel="noreferrer"> <picture> <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin-dark.svg" /> <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" /> <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" alt="LinkedIn" title="LinkedIn" /> </picture> </a></p>
-<a href="https://www.github.com/Likethan K J" target="_blank" rel="noreferrer"><img
-src="https://img.shields.io/github/followers/Likethan K J?logo=github&style=for-the-badge&color=0891b2&labelColor=1c1917" /></a>
+### **Web Frameworks & Tools**
+<p>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</p>
 
+</div>
+
+---
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Likethan&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Likethan&layout=compact&theme=tokyonight&hide_border=false" />
+
+  <br />
+
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Likethan&theme=tokyonight" alt="Likethan's Streak" />
+
+</div>
+
+---
+
+## 🌐 Connect & Engage
+
+<div align="center">
+
+  <a href="https://likethan-portfolio-eohs.vercel.app">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://linkedin.com/in/YOUR-LINKEDIN">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:your-email@example.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+
+</div>
+
+<br />
+
+<div align="center">
+  <sub>Designed & Maintained by Likethan K J</sub>
+</div>
