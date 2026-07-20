@@ -39,3 +39,18 @@ likethan@system-root:~$ ./initialize_profile.sh
 [INFO]  Work History: Ex-Data Analytics Intern @ NoviTech R&D | Incoming Intern @ Axlero Solutions
 [INFO]  Primary Runtime: Python 3.x | JavaScript ES6+ | Java 17+ | SQL
 [INFO]  System Readiness: 100% — Ready for high-impact software engineering roles
+class Developer(Likethan):
+    def __init__(self):
+        self.name = "Likethan K J"
+        self.role = "AI & Data Science Engineer"
+        self.domains = ["Machine Learning", "Deep Learning", "Full-Stack Web", "IoT Systems"]
+        self.passions = ["Solving Complex Algorithms", "Optimizing ML Models", "Clean UI/UX Architecture"]
+
+    def current_mission(self):
+        return "Bridging cutting-edge AI models with scalable web technologies."
+
+    def build_solution(self, problem):
+        data = self.analyze_and_clean(problem)
+        model = self.train_predictive_engine(data)
+        interface = self.deploy_fullstack_app(model)
+        return interface.deploy_to_cloud()
