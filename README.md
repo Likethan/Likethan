@@ -208,3 +208,14 @@ AI-powered ATS Resume Analysis with personalized career suggestions and intervie
 ⭐ Thanks for visiting my profile ⭐
 
 </p>
+
+
+---
+
+# 🐍 Contribution Snake
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" />
+</p>
+
+---
