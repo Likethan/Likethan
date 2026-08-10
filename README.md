@@ -35,8 +35,6 @@ Currently focusing on:
 ## Languages
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-orange?style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript)
 
 ---
@@ -47,7 +45,6 @@ Currently focusing on:
 ![NextJS](https://img.shields.io/badge/NextJS-black?style=for-the-badge&logo=nextdotjs)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-blue?style=for-the-badge&logo=tailwindcss)
 ![Framer Motion](https://img.shields.io/badge/FramerMotion-black?style=for-the-badge)
-![ThreeJS](https://img.shields.io/badge/ThreeJS-black?style=for-the-badge)
 
 ---
 
