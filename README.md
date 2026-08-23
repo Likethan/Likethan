@@ -153,10 +153,15 @@ AI-powered ATS Resume Analysis with personalized career suggestions and intervie
 
 # 🐍 Contribution Snake
 
+---
+
+# 🐍 Contribution Snake
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake" />
 </p>
 
+---
 # 📊 Contribution Graph
 
 [![Likethan's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Likethan&theme=tokyo-night)]()
