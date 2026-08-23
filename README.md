@@ -130,30 +130,31 @@ AI-powered ATS Resume Analysis with personalized career suggestions and intervie
 
 ---
 
-# 📈 GitHub Analytics
+# 📊 GitHub Analytics
 
 <p align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=Likethan&show_icons=true&theme=tokyonight"/>
-
-<img height="170" src="https://github-readme-streak-stats.herokuapp.com/?user=Likethan&theme=tokyonight"/>
-
+  <img src="./assets/github-stats.svg" height="180" alt="GitHub Statistics" />
+  <img src="./assets/streak.svg" height="180" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Likethan&layout=compact&theme=tokyonight"/>
-
+  <img src="./assets/top-languages.svg" height="180" alt="Top Languages" />
 </p>
 
 ---
 
-# 🏆 GitHub Trophy
+# 🏆 GitHub Achievements
 
 <p align="center">
+  <img src="./assets/trophies.svg" alt="GitHub Trophies" />
+</p>
 
-<img src="https://github-profile-trophy.vercel.app/?username=Likethan&theme=tokyonight&column=7"/>
+---
 
+# 🐍 Contribution Snake
+
+<p align="center">
+  <img src="./assets/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake" />
 </p>
 
 ---
@@ -188,7 +189,7 @@ AI-powered ATS Resume Analysis with personalized career suggestions and intervie
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
 </a>
 
-<a href="mailto:yourmail@gmail.com">
+<a href="mailto:likethankj751@gmail.com">
 <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail"/>
 </a>
 
@@ -208,3 +209,5 @@ AI-powered ATS Resume Analysis with personalized career suggestions and intervie
 ⭐ Thanks for visiting my profile ⭐
 
 </p>
+
+in this the github analytics and the github trophy is missing that the image is not viewing. so that i need it to be rectified 
