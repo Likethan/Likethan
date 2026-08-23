@@ -154,10 +154,8 @@ AI-powered ATS Resume Analysis with personalized career suggestions and intervie
 # 🐍 Contribution Snake
 
 <p align="center">
-  <img src="./assets/github-contribution-grid-snake-dark.svg" alt="GitHub Contribution Snake" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake" />
 </p>
-
----
 
 # 📊 Contribution Graph
 
