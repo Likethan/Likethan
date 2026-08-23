@@ -151,9 +151,7 @@ AI-powered ATS Resume Analysis with personalized career suggestions and intervie
 
 ---
 
-# 🐍 Contribution Snake
 
----
 
 # 🐍 Contribution Snake
 
