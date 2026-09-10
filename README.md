@@ -6,8 +6,8 @@
 
 <p>
   <a href="https://github.com/Likethan">GitHub</a> •
-  <a href="https://linkedin.com/in/likethan-k-j-b434b632b">LinkedIn</a> •
-  <a href="https://likethan-portfolio-eohs.vercel.app/">Portfolio</a>
+  <a href="https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true">LinkedIn</a> •
+  <a href="http://likethan-portfolio-eohs.vercel.app/">Portfolio</a>
 </p>
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=22&duration=3000&pause=900&center=true&vCenter=true&width=760&lines=Full+Stack+Developer;AI+%26+Data+Science+Student;Building+Modern+Web+Applications;Exploring+LLMs+%7C+RAG+%7C+Agentic+AI;Designing+Clean+%26+Intelligent+Experiences" alt="Typing introduction" />
@@ -206,10 +206,10 @@ An AI-powered interview practice platform focused on helping candidates improve 
   <a href="https://github.com/Likethan">
     <img src="https://img.shields.io/badge/GitHub-Likethan-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-  <a href="https://linkedin.com/in/likethan-k-j-b434b632b">
+  <a href="https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="https://likethan-portfolio-eohs.vercel.app/">
+  <a href="http://likethan-portfolio-eohs.vercel.app/">
     <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
 </p>
