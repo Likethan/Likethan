@@ -162,23 +162,25 @@ An interview environment that dynamically adapts to the candidate instead of fol
 ## 🧠 Currently Exploring
 
 ```text
-LLMs
- ├── RAG Systems
- ├── Agentic AI
- ├── Multi-Agent Architecture
- └── AI Evaluation
+                         HOW I ENGINEER
 
-Software Engineering
- ├── System Design
- ├── Backend Architecture
- ├── API Design
- └── Scalable Applications
-
-Product Engineering
- ├── UX Engineering
- ├── Motion & Interaction
- ├── Design Systems
- └── Developer Experience
+        EXPERIENCE                 SYSTEMS                 INTELLIGENCE
+             │                        │                         │
+             ▼                        ▼                         ▼
+      ┌─────────────┐          ┌─────────────┐          ┌─────────────┐
+      │ Design      │          │ Architecture│          │ RAG         │
+      │ UX          │ ───────► │ APIs        │ ───────► │ Agents      │
+      │ Motion      │          │ Backend     │          │ Multi-Agent │
+      │ DevEx       │          │ Scale       │          │ Evaluation  │
+      └─────────────┘          └─────────────┘          └─────────────┘
+             │                        │                         │
+             └────────────────────────┼─────────────────────────┘
+                                      ▼
+                         ┌─────────────────────────┐
+                         │   INTELLIGENT PRODUCTS  │
+                         │                         │
+                         │  THINK → BUILD → SHIP   │
+                         └─────────────────────────┘
 ```
 
 ---
