@@ -203,14 +203,14 @@ An AI-powered interview practice platform focused on helping candidates improve 
 ## 🤝 Let's Connect
 
 <p align="center">
+  <a href="https://github.com/Likethan">
+    <img src="https://img.shields.io/badge/GitHub-Likethan-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
   <a href="https://linkedin.com/in/likethan-k-j-b434b632b">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="https://likethan-portfolio-eohs.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfolio-111111?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-  <a href="mailto:likethankj751@gmail.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+    <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
 </p>
 
