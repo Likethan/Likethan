@@ -210,9 +210,8 @@ An interview environment that dynamically adapts to the candidate instead of fol
 
 <p align="center">
   <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&color=181717" />
-  <img src="https://img.shields.io/github/stars/Likethan?label=Profile%20Stars&style=for-the-badge&logo=github&color=6E56CF" />
+  <img src="https://img.shields.io/github/user-stars/Likethan?label=Profile%20Stars&style=for-the-badge&logo=github&color=6E56CF" />
   <img src="https://img.shields.io/github/commit-activity/y/Likethan?label=Yearly%20Activity&style=for-the-badge&logo=github&color=238636" />
-  <img src="https://img.shields.io/github/repos/Likethan?label=Public%20Repositories&style=for-the-badge&logo=github&color=3178C6" />
 </p>
 
 <p align="center">
@@ -267,12 +266,11 @@ That's the direction I'm building toward.
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Views&color=6E56CF&style=for-the-badge" />
   <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&color=181717" />
-  <img src="https://img.shields.io/github/stars/Likethan?label=Stars&style=for-the-badge&logo=github&color=6E56CF" />
-  <img src="https://img.shields.io/github/repos/Likethan?label=Public%20Repos&style=for-the-badge&logo=github&color=3178C6" />
+  <img src="https://img.shields.io/github/user-stars/Likethan?label=Stars&style=for-the-badge&logo=github&color=6E56CF" />
 </p>
 
 <p align="center">
-  <b>👁 Views</b> · <b>👥 Community</b> · <b>⭐ Recognition</b> · <b>📦 Builds</b>
+  <b>👁 Views</b> · <b>👥 Community</b> · <b>⭐ Recognition</b>
 </p>
 
 <p align="center">
