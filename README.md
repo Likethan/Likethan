@@ -15,8 +15,6 @@
   <a href="http://likethan-portfolio-eohs.vercel.app/">Portfolio</a>
 </p>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=22&duration=3000&pause=900&center=true&vCenter=true&width=760&lines=Full+Stack+Developer;AI+Engineer;Building+Intelligent[...]
-
 </div>
 
 ---
