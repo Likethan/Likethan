@@ -268,10 +268,12 @@ That's the direction I'm building toward.
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Views&color=6E56CF&style=for-the-badge" />
   <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/github/stars/Likethan?label=Stars%20Received&style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/github/repos/Likethan?label=Public%20Repos&style=for-the-badge&logo=github&logoColor=white" />
 </p>
 
 <p align="center">
-  <b>👁 Profile Views</b> · <b>👥 Followers</b>
+  <b>👁 Profile Views</b> · <b>👥 Followers</b> · <b>⭐ Stars Received</b> · <b>📦 Public Repositories</b>
 </p>
 
 <p align="center">
