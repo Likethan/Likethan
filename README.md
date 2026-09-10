@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/ChatGPT%20Image%20Sep%2010,%202026,%2006_31_40%20PM.png" width="100%" alt="Likethan K J">
+  <img src="./assets/jujutsu-kaisen-profile.png" width="100%" alt="Likethan K J">
 </p>
 <div align="center">
 
@@ -15,7 +15,7 @@
   <a href="http://likethan-portfolio-eohs.vercel.app/">Portfolio</a>
 </p>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=22&duration=3000&pause=900&center=true&vCenter=true&width=760&lines=Full+Stack+Developer;AI+Engineer;Building+Intelligent+Systems;Exploring+LLMs+%7C+RAG+%7C+Agentic+AI;Turning+Ideas+Into+Products" alt="Typing introduction" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=22&duration=3000&pause=900&center=true&vCenter=true&width=760&lines=Full+Stack+Developer;AI+Engineer;Building+Intelligent[...]
 
 </div>
 
@@ -170,12 +170,12 @@ An interview environment that dynamically adapts to the candidate instead of fol
         EXPERIENCE                 SYSTEMS                 INTELLIGENCE
              │                        │                         │
              ▼                        ▼                         ▼
-      ┌─────────────┐          ┌─────────────┐          ┌─────────────┐
-      │ Design      │          │ Architecture│          │ RAG         │
-      │ UX          │ ───────► │ APIs        │ ───────► │ Agents      │
-      │ Motion      │          │ Backend     │          │ Multi-Agent │
-      │ DevEx       │          │ Scale       │          │ Evaluation  │
-      └─────────────┘          └─────────────┘          └─────────────┘
+       ┌─────────────┐          ┌─────────────┐          ┌─────────────┐
+       │ Design      │          │ Architecture│          │ RAG         │
+       │ UX          │ ───────► │ APIs        │ ───────► │ Agents      │
+       │ Motion      │          │ Backend     │          │ Multi-Agent │
+       │ DevEx       │          │ Scale       │          │ Evaluation  │
+       └─────────────┘          └─────────────┘          └─────────────┘
              │                        │                         │
              └────────────────────────┼─────────────────────────┘
                                       ▼
