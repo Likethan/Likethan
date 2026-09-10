@@ -262,12 +262,21 @@ That's the direction I'm building toward.
 
 ## 👁 Profile Reach
 
+> **A lightweight snapshot of the people discovering my work and the activity around my GitHub profile.**
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Views&color=6E56CF&style=for-the-badge" />
+  <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&color=181717" />
+  <img src="https://img.shields.io/github/stars/Likethan?label=Stars&style=for-the-badge&logo=github&color=6E56CF" />
+  <img src="https://img.shields.io/github/repos/Likethan?label=Public%20Repos&style=for-the-badge&logo=github&color=3178C6" />
 </p>
 
 <p align="center">
-  <sub>Thanks for stopping by — explore the projects, experiments, and systems I'm building.</sub>
+  <b>👁 Views</b> · <b>👥 Community</b> · <b>⭐ Recognition</b> · <b>📦 Builds</b>
+</p>
+
+<p align="center">
+  <sub>Every visit is a chance to turn curiosity into collaboration.</sub>
 </p>
 
 ---
