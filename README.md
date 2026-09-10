@@ -187,29 +187,54 @@ An interview environment that dynamically adapts to the candidate instead of fol
 
 ## 📊 GitHub Activity
 
+> **The activity layer tracks the work behind the profile — contributions, repositories, commits, and language distribution.**
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Likethan&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&theme=transparent" height="180" />
-  <img src="https://streak-stats.demolab.com?user=Likethan&hide_border=true&theme=transparent" height="180" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Likethan&theme=github_dark" width="98%" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Likethan&layout=compact&hide_border=true&langs_count=8&theme=transparent" height="180" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Likethan&theme=github_dark" height="180" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Likethan&theme=github_dark" height="180" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Likethan&hide_border=true&theme=transparent" height="180" />
 </p>
 
 ---
 
 ## 🏆 Achievements
 
+> **Milestones from building, contributing, and consistently showing up on GitHub.**
+
+<p align="center">
+  <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&color=181717" />
+  <img src="https://img.shields.io/github/stars/Likethan?label=Profile%20Stars&style=for-the-badge&logo=github&color=6E56CF" />
+  <img src="https://img.shields.io/github/commit-activity/y/Likethan?label=Yearly%20Activity&style=for-the-badge&logo=github&color=238636" />
+  <img src="https://img.shields.io/github/repos/Likethan?label=Public%20Repositories&style=for-the-badge&logo=github&color=3178C6" />
+</p>
+
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Likethan&theme=flat&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" />
+</p>
+
+<p align="center">
+  <sub>Achievements grow with the work — every contribution, repository, and shipped project adds to the journey.</sub>
 </p>
 
 ---
 
 ## 📈 Contribution Activity
 
+> **A visual record of the code, experiments, fixes, and iterations that shape my engineering journey.**
+
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=00000000&color=888888&line=6E56CF&point=FFFFFF&area=true&hide_border=true" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=00000000&color=888888&line=6E56CF&point=FFFFFF&area=true&hide_border=true&custom_title=Contribution%20Activity" width="98%" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Likethan&theme=github_dark" width="98%" />
 </p>
 
 ---
