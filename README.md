@@ -2,7 +2,9 @@
 
 # Hi 👋, I'm Likethan K J
 
-### Full Stack Developer • AI & Data Science Student • Building Intelligent Digital Products
+### Full Stack Developer · AI Engineer · Building Intelligent Digital Products
+
+**I design systems where software, AI, and user experience work together.**
 
 <p>
   <a href="https://github.com/Likethan">GitHub</a> •
@@ -10,42 +12,47 @@
   <a href="http://likethan-portfolio-eohs.vercel.app/">Portfolio</a>
 </p>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=22&duration=3000&pause=900&center=true&vCenter=true&width=760&lines=Full+Stack+Developer;AI+%26+Data+Science+Student;Building+Modern+Web+Applications;Exploring+LLMs+%7C+RAG+%7C+Agentic+AI;Designing+Clean+%26+Intelligent+Experiences" alt="Typing introduction" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=22&duration=3000&pause=900&center=true&vCenter=true&width=760&lines=Full+Stack+Developer;AI+Engineer;Building+Intelligent+Systems;Exploring+LLMs+%7C+RAG+%7C+Agentic+AI;Turning+Ideas+Into+Products" alt="Typing introduction" />
 
 </div>
 
 ---
 
-## 🚀 About Me
+## ◈ About
 
-I'm a final-year **Artificial Intelligence & Data Science student** focused on becoming a strong **Full Stack Developer**.
+I'm a final-year **Artificial Intelligence & Data Science student** focused on building production-minded software across the full stack.
 
-I build end-to-end applications that combine **modern frontend engineering, backend development, AI capabilities, and thoughtful UI/UX**. I enjoy taking an idea from a problem statement to a functional, polished product.
+My interests sit at the intersection of:
 
-- 💻 Building full-stack web applications and developer-focused products
-- 🤖 Exploring LLMs, RAG, AI agents, and intelligent automation
-- 🎨 Interested in modern SaaS interfaces, interaction design, and product UX
-- 🧩 Interested in clean architecture, APIs, system design, and scalable applications
-- 📚 Currently strengthening my software engineering and problem-solving fundamentals
+**Software Engineering × Artificial Intelligence × Product Design**
 
-> **Build useful things. Keep learning. Ship better software.**
+I enjoy taking an idea from a blank screen and turning it into a working system — from architecture and APIs to interfaces, AI workflows, deployment, and iteration.
+
+- Building full-stack applications with a product-first mindset
+- Exploring LLMs, RAG, agentic workflows, and AI automation
+- Designing interfaces that feel intentional rather than template-driven
+- Working with Python across AI, backend, data, and automation
+- Continuously improving software architecture and engineering fundamentals
+
+> **Think deeply. Build intentionally. Ship continuously.**
 
 ---
 
-## 🧠 What I Build
+## ⚡ Engineering Focus
 
-| Area | Focus |
+| Discipline | What I'm Exploring |
 | --- | --- |
-| **Full Stack Development** | Responsive web applications, REST APIs, authentication, dashboards |
-| **AI Applications** | LLM-powered features, RAG pipelines, AI assistants, automation |
-| **Backend Engineering** | Python/Node.js services, API design, application logic |
-| **Frontend Engineering** | React, TypeScript, responsive UI, animations, component-driven development |
-| **Product & UI/UX** | SaaS interfaces, information architecture, interaction design |
-| **Cybersecurity** | Website security analysis, reconnaissance, security headers and web security concepts |
+| **Full Stack** | Modern web applications, APIs, authentication, dashboards |
+| **Artificial Intelligence** | LLM applications, agents, RAG, AI workflows |
+| **Backend** | Python services, REST APIs, system architecture |
+| **Frontend** | React, TypeScript, interaction design, motion |
+| **Data** | Data processing, visualization, machine learning |
+| **Security** | Web security, reconnaissance, attack-surface analysis |
+| **Product Design** | UX systems, SaaS interfaces, interaction patterns |
 
 ---
 
-## ⚙️ Tech Stack
+## 🧩 Technology
 
 ### Languages
 
@@ -58,6 +65,7 @@ I build end-to-end applications that combine **modern frontend engineering, back
 <p>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
 <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
 <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
 <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" />
@@ -72,7 +80,7 @@ I build end-to-end applications that combine **modern frontend engineering, back
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
 </p>
 
-### AI / Data
+### AI & Data
 
 <p>
 <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
@@ -81,9 +89,10 @@ I build end-to-end applications that combine **modern frontend engineering, back
 <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
 <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
 <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+<img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white" />
 </p>
 
-### Databases & Tools
+### Databases & Infrastructure
 
 <p>
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
@@ -96,65 +105,81 @@ I build end-to-end applications that combine **modern frontend engineering, back
 
 ---
 
-## 🔥 Featured Projects
+## ⚡ Selected Builds
 
-### 🔎 InsightForge AI — Autonomous Research & Intelligence Platform
+> Not just applications — experiments in intelligent systems, autonomous workflows, and human-centered software.
 
-An AI-powered research platform designed to turn complex questions and documents into structured insights, analysis, visualizations, and reports.
+### ◈ InsightForge
 
-**Highlights:**
-- Multi-agent workflow using **LangGraph** with Supervisor, Research, Analysis, Visualization, and Writer agents
-- Document intelligence with PDF processing and data extraction
-- AI-assisted analysis, visualization, and structured report generation
+**Evidence Intelligence Engine**
 
-**Stack:** `Python` `Streamlit` `LangGraph` `Gemini` `PyMuPDF` `Pandas` `Plotly`
+A research system that transforms fragmented documents and live information into **traceable evidence, competing insights, and decision-ready intelligence**.
 
----
-
-### 🛡️ Website Security Analyzer
-
-A web security assessment platform that brings multiple reconnaissance and security checks into a unified interface.
-
-**Capabilities:**
-- SSL/TLS and security-header analysis
-- DNS and WHOIS intelligence
-- Port and service reconnaissance
-- Technology detection and web-security checks
-
-**Stack:** `Python` `Flask` `React` `TypeScript` `Tailwind CSS`
+`Python` `Streamlit` `LangGraph` `Gemini` `PyMuPDF` `Pandas` `Plotly`
 
 ---
 
-### 🎙️ AI Mock Interview
+### ◈ CyberAnalyzer
 
-An AI-powered interview practice platform focused on helping candidates improve **communication, fluency, confidence, and interview readiness**.
+**Autonomous Web Security Investigator**
 
-**Focus:**
-- Interactive mock interview experience
-- AI-driven interview questions and feedback
-- Modern responsive interface designed for repeated practice
+A security intelligence platform that investigates a website's attack surface and connects individual findings into meaningful security risks.
 
-**Stack:** `React` `TypeScript` `Vite` `AI`
+`Python` `Flask` `React` `TypeScript` `Tailwind CSS`
 
 ---
 
-## 📊 GitHub Analytics
+### ◈ InterviewOS
+
+**Adaptive AI Interview Simulator**
+
+An interview environment that dynamically adapts to the candidate instead of following a fixed question-and-answer flow.
+
+`React` `TypeScript` `Vite` `AI` `Speech Processing`
+
+---
+
+## 🧠 Currently Exploring
+
+```text
+LLMs
+ ├── RAG Systems
+ ├── Agentic AI
+ ├── Multi-Agent Architecture
+ └── AI Evaluation
+
+Software Engineering
+ ├── System Design
+ ├── Backend Architecture
+ ├── API Design
+ └── Scalable Applications
+
+Product Engineering
+ ├── UX Engineering
+ ├── Motion & Interaction
+ ├── Design Systems
+ └── Developer Experience
+```
+
+---
+
+## 📊 GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Likethan&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&theme=transparent" height="180" alt="GitHub statistics" />
-  <img src="https://streak-stats.demolab.com?user=Likethan&hide_border=true&theme=transparent" height="180" alt="GitHub streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Likethan&show_icons=true&hide_border=true&rank_icon=github&include_all_commits=true&count_private=true&theme=transparent" height="180" />
+  <img src="https://streak-stats.demolab.com?user=Likethan&hide_border=true&theme=transparent" height="180" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Likethan&layout=compact&hide_border=true&langs_count=8&theme=transparent" height="180" alt="Top languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Likethan&layout=compact&hide_border=true&langs_count=8&theme=transparent" height="180" />
 </p>
 
 ---
 
-## 🏆 GitHub Trophies
+## 🏆 Achievements
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Likethan&theme=flat&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" alt="GitHub trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Likethan&theme=flat&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" />
 </p>
 
 ---
@@ -162,42 +187,47 @@ An AI-powered interview practice platform focused on helping candidates improve 
 ## 📈 Contribution Activity
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=00000000&color=888888&line=6E56CF&point=FFFFFF&area=true&hide_border=true" alt="Likethan's contribution graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=00000000&color=888888&line=6E56CF&point=FFFFFF&area=true&hide_border=true" />
 </p>
 
 ---
 
-## 🐍 Contribution Snake
+## 🐍 Contribution Flow
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" alt="GitHub contribution snake" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" />
 </p>
 
 ---
 
-## 🌱 Currently Learning
+## 🎯 2026
 
-- Advanced Full Stack Architecture
-- Generative AI & LLM Applications
-- RAG Systems & Vector Search
-- Agentic AI & Multi-Agent Systems
-- REST API Design & Backend Architecture
-- System Design & Software Engineering
-- Cloud & Deployment Fundamentals
+**Build → Learn → Experiment → Ship → Repeat**
 
----
-
-## 🎯 2026 Goals
-
-- 🚀 Build and ship production-quality full-stack applications
-- 🤖 Develop practical AI-powered products
-- 🧠 Strengthen DSA, system design, and backend fundamentals
-- 🌐 Contribute more consistently to open-source projects
-- 📦 Improve code quality, architecture, testing, and deployment practices
+- 🚀 Ship production-quality software
+- 🤖 Build deeper AI systems instead of surface-level AI features
+- 🧠 Strengthen DSA, system design, and backend engineering
+- 🌐 Contribute to meaningful open-source projects
+- 🛠️ Turn experimental ideas into usable products
 
 ---
 
-## 🤝 Let's Connect
+## ◇ Beyond the Code
+
+I care about more than making something **work**.
+
+I care about:
+
+**How it is architected.**  
+**How it feels to use.**  
+**How it scales.**  
+**How intelligently it behaves.**
+
+That's the direction I'm building toward.
+
+---
+
+## 🤝 Connect
 
 <p align="center">
   <a href="https://github.com/Likethan">
@@ -213,8 +243,8 @@ An AI-powered interview practice platform focused on helping candidates improve 
 
 <div align="center">
 
-### Thanks for visiting 👋
+### Thanks for stopping by 👋
 
-**Building. Learning. Shipping. Repeating.**
+**Build useful things. Make them memorable.**
 
 </div>
