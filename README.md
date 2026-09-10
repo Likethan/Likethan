@@ -204,16 +204,24 @@ An interview environment that dynamically adapts to the candidate instead of fol
 
 ---
 
-## 🏆 Achievements
+## 🏆 Achievements & Milestones
 
-> **Milestones from building, contributing, and consistently showing up on GitHub.**
+> **A snapshot of what has been built, explored, and shipped — without relying on third-party trophy APIs.**
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Likethan&theme=flat&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" />
+  <img src="https://img.shields.io/badge/AI%20Systems-InsightForge-181717?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Web%20Security-CyberAnalyzer-181717?style=for-the-badge&logo=owasp&logoColor=white" />
+  <img src="https://img.shields.io/badge/AI%20Product-InterviewOS-181717?style=for-the-badge&logo=react&logoColor=white" />
 </p>
 
 <p align="center">
-  <sub>Achievements grow with the work — every contribution, repository, and shipped project adds to the journey.</sub>
+  <img src="https://img.shields.io/badge/LLMs-RAG%20%7C%20Agents%20%7C%20Workflows-6E56CF?style=flat-square" />
+  <img src="https://img.shields.io/badge/Full%20Stack-React%20%7C%20Python%20%7C%20APIs-6E56CF?style=flat-square" />
+  <img src="https://img.shields.io/badge/Engineering-Design%20%7C%20Architecture%20%7C%20DevEx-6E56CF?style=flat-square" />
+</p>
+
+<p align="center">
+  <sub>Built around real projects and engineering focus — no fabricated awards, ranks, or achievements.</sub>
 </p>
 
 ---
