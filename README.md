@@ -260,6 +260,18 @@ That's the direction I'm building toward.
 
 ---
 
+## 👁 Profile Reach
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Views&color=6E56CF&style=for-the-badge" />
+</p>
+
+<p align="center">
+  <sub>Thanks for stopping by — explore the projects, experiments, and systems I'm building.</sub>
+</p>
+
+---
+
 ## 🤝 Connect
 
 <p align="center">
