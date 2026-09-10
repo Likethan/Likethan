@@ -225,20 +225,6 @@ An interview environment that dynamically adapts to the candidate instead of fol
 
 ---
 
-## 📈 Contribution Activity
-
-> **A visual record of the code, experiments, fixes, and iterations that shape my engineering journey.**
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=00000000&color=888888&line=6E56CF&point=FFFFFF&area=true&hide_border=true&custom_title=Contribution%20Activity" width="98%" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Likethan&theme=github_dark" width="98%" />
-</p>
-
----
-
 ## 🐍 Contribution Flow
 
 <p align="center">
