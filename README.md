@@ -188,10 +188,10 @@ An interview environment that dynamically adapts to the candidate instead of fol
 
 ## 📊 GitHub Activity
 
-> **The activity layer tracks the work behind the profile — contributions, repositories, commits, and language distribution.**
+> **Live contribution activity — without a cached contribution-count card.**
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Likethan&theme=github_dark" width="98%" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=0d1117&color=ffffff&line=6E56CF&point=ffffff&area=true&hide_border=true" width="98%" />
 </p>
 
 <p align="center">
