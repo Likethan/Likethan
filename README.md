@@ -263,20 +263,21 @@ That's the direction I'm building toward.
 
 ## 👁 Profile Reach
 
-> **A dedicated visibility snapshot — separate from your GitHub activity and achievement sections.**
+> **A clean visibility snapshot — focused only on how the profile is being discovered and followed.**
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Visits&color=6E56CF&style=for-the-badge" />
-  <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&color=181717" />
-  <img src="https://img.shields.io/github/user-stars/Likethan?label=Stars%20Given&style=for-the-badge&logo=github&color=6E56CF" />
+  <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Views&color=6E56CF&style=for-the-badge" />
+  <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/github/stars/Likethan?label=Stars%20Received&style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/github/repos/Likethan?label=Public%20Repos&style=for-the-badge&logo=github&logoColor=white" />
 </p>
 
 <p align="center">
-  <b>👁 Profile Visits</b> · <b>👥 Followers</b> · <b>⭐ Stars Given</b>
+  <b>👁 Profile Views</b> · <b>👥 Followers</b> · <b>⭐ Stars Received</b> · <b>📦 Public Repositories</b>
 </p>
 
 <p align="center">
-  <sub>Profile visits are tracked by the GitHub Profile Views Counter. Stars Given represents repositories you have starred, not stars received by your repositories.</sub>
+  <sub>Visibility metrics are kept separate from contribution activity, streaks, languages, and project milestones.</sub>
 </p>
 
 ---
