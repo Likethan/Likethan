@@ -115,7 +115,15 @@ I enjoy taking an idea from a blank screen and turning it into a working system 
 
 A research system that transforms fragmented documents and live information into **traceable evidence, competing insights, and decision-ready intelligence**.
 
-`Python` `Streamlit` `LangGraph` `Gemini` `PyMuPDF` `Pandas` `Plotly`
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langgraph&logoColor=white" />
+<img src="https://img.shields.io/badge/Gemini-4285F4?style=flat-square&logo=googlegemini&logoColor=white" />
+<img src="https://img.shields.io/badge/PyMuPDF-3776AB?style=flat-square" />
+<img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
+<img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white" />
+</p>
 
 ---
 
@@ -125,7 +133,13 @@ A research system that transforms fragmented documents and live information into
 
 A security intelligence platform that investigates a website's attack surface and connects individual findings into meaningful security risks.
 
-`Python` `Flask` `React` `TypeScript` `Tailwind CSS`
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
+</p>
 
 ---
 
@@ -135,7 +149,13 @@ A security intelligence platform that investigates a website's attack surface an
 
 An interview environment that dynamically adapts to the candidate instead of following a fixed question-and-answer flow.
 
-`React` `TypeScript` `Vite` `AI` `Speech Processing`
+<p>
+<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
+<img src="https://img.shields.io/badge/AI-6E56CF?style=flat-square" />
+<img src="https://img.shields.io/badge/Speech_Processing-444444?style=flat-square" />
+</p>
 
 ---
 
