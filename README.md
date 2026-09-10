@@ -209,12 +209,6 @@ An interview environment that dynamically adapts to the candidate instead of fol
 > **Milestones from building, contributing, and consistently showing up on GitHub.**
 
 <p align="center">
-  <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&color=181717" />
-  <img src="https://img.shields.io/github/user-stars/Likethan?label=Profile%20Stars&style=for-the-badge&logo=github&color=6E56CF" />
-  <img src="https://img.shields.io/github/commit-activity/y/Likethan?label=Yearly%20Activity&style=for-the-badge&logo=github&color=238636" />
-</p>
-
-<p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Likethan&theme=flat&no-frame=true&no-bg=true&margin-w=8&row=1&column=7" />
 </p>
 
@@ -261,20 +255,20 @@ That's the direction I'm building toward.
 
 ## 👁 Profile Reach
 
-> **A lightweight snapshot of the people discovering my work and the activity around my GitHub profile.**
+> **A dedicated visibility snapshot — separate from your GitHub activity and achievement sections.**
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Views&color=6E56CF&style=for-the-badge" />
+  <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Visits&color=6E56CF&style=for-the-badge" />
   <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&color=181717" />
-  <img src="https://img.shields.io/github/user-stars/Likethan?label=Stars&style=for-the-badge&logo=github&color=6E56CF" />
+  <img src="https://img.shields.io/github/user-stars/Likethan?label=Stars%20Given&style=for-the-badge&logo=github&color=6E56CF" />
 </p>
 
 <p align="center">
-  <b>👁 Views</b> · <b>👥 Community</b> · <b>⭐ Recognition</b>
+  <b>👁 Profile Visits</b> · <b>👥 Followers</b> · <b>⭐ Stars Given</b>
 </p>
 
 <p align="center">
-  <sub>Every visit is a chance to turn curiosity into collaboration.</sub>
+  <sub>Profile visits are tracked by the GitHub Profile Views Counter. Stars Given represents repositories you have starred, not stars received by your repositories.</sub>
 </p>
 
 ---
