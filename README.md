@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./assets/ChatGPT%20Image%20Sep%2010,%202026,%2006_31_40%20PM.png" width="100%" alt="Likethan K J">
+</p>
 <div align="center">
 
 # Hi 👋, I'm Likethan K J
