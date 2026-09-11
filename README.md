@@ -126,7 +126,15 @@ I care about **clean architecture, thoughtful interfaces, useful AI, developer e
 
 An autonomous research system that combines live information, document intelligence, multi-agent workflows, analysis, visualization, and structured report generation to turn fragmented information into decision-ready insights.
 
-`Python` `Streamlit` `LangGraph` `Gemini` `PyMuPDF` `Pandas` `Plotly`
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square" />
+  <img src="https://img.shields.io/badge/Gemini-4285F4?style=flat-square&logo=googlegemini&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyMuPDF-3776AB?style=flat-square" />
+  <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white" />
+</p>
 
 ---
 
@@ -135,7 +143,13 @@ An autonomous research system that combines live information, document intellige
 
 A security analysis platform that maps a website's attack surface, performs reconnaissance, evaluates security signals, and connects technical findings into actionable risk intelligence.
 
-`Python` `Flask` `React` `TypeScript` `Tailwind CSS`
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
+</p>
 
 ---
 
@@ -144,7 +158,13 @@ A security analysis platform that maps a website's attack surface, performs reco
 
 An interactive interview environment designed to simulate realistic technical and communication rounds, with adaptive questioning and AI-assisted evaluation instead of a fixed question flow.
 
-`React` `TypeScript` `Vite` `AI` `Speech Processing`
+<p>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/AI-6E56CF?style=flat-square" />
+  <img src="https://img.shields.io/badge/Speech_Processing-181717?style=flat-square" />
+</p>
 
 ---
 
@@ -153,7 +173,14 @@ An interactive interview environment designed to simulate realistic technical an
 
 A full-stack campus platform bringing attendance, assignments, placements, events, clubs, notes, student profiles, and an AI assistant into one product-focused interface.
 
-`React` `TypeScript` `Vite` `Tailwind CSS` `Framer Motion` `Recharts`
+<p>
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white" />
+  <img src="https://img.shields.io/badge/Recharts-181717?style=flat-square" />
+</p>
 
 ---
 
