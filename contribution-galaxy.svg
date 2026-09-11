@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="300" viewBox="0 0 980 300">
+<defs>
+<radialGradient id="bg"><stop offset="0" stop-color="#17102d"/><stop offset="0.55" stop-color="#090817"/><stop offset="1" stop-color="#03040a"/></radialGradient>
+<radialGradient id="nebula"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".22"/><stop offset=".5" stop-color="#4f46e5" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="trail" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity="0"/><stop offset=".55" stop-color="#a78bfa" stop-opacity=".35"/><stop offset="1" stop-color="#ffffff" stop-opacity=".95"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="100%" height="100%" rx="18" fill="url(#bg)"/>
+<ellipse cx="490" cy="150" rx="420" ry="130" fill="url(#nebula)" filter="url(#soft)"/>
+<text x="42" y="30" fill="#f5f3ff" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="700" letter-spacing="2">CONTRIBUTION GALAXY</text>
+<text x="938" y="30" text-anchor="end" fill="#a1a1aa" font-family="Inter,Segoe UI,sans-serif" font-size="12">163 contributions · LAST 12 MONTHS</text>
+<circle cx="846" cy="196" r="0.8" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="477" cy="270" r="0.45" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="534" cy="251" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="518" cy="106" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="788" cy="171" r="0.45" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="404" cy="73" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="485" cy="56" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="448" cy="279" r="0.6" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="43" cy="113" r="0.45" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="786" cy="186" r="0.6" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="34" cy="238" r="0.8" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="587" cy="96" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="589" cy="211" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="876" cy="237" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="816" cy="188" r="0.8" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="185" cy="262" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="387" cy="105" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="573" cy="58" r="1.0" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="347" cy="105" r="0.6" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="40" cy="218" r="0.8" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="776" cy="185" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="576" cy="116" r="0.6" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="835" cy="83" r="0.8" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="775" cy="172" r="0.45" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="846" cy="268" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="654" cy="47" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="867" cy="195" r="0.45" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="443" cy="218" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="84" cy="181" r="0.6" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="25" cy="73" r="0.8" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="339" cy="72" r="0.8" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="304" cy="50" r="0.6" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="130" cy="155" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="287" cy="268" r="0.8" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="650" cy="258" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="943" cy="69" r="0.8" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="912" cy="168" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="960" cy="132" r="0.8" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="582" cy="56" r="1.0" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="684" cy="215" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="957" cy="179" r="0.45" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="92" cy="74" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="632" cy="78" r="0.8" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="97" cy="259" r="0.8" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="206" cy="156" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="777" cy="188" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="797" cy="264" r="1.0" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="411" cy="193" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="152" cy="141" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="570" cy="233" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="221" cy="169" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="894" cy="186" r="0.8" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="382" cy="227" r="0.8" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="918" cy="64" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="338" cy="255" r="0.45" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="580" cy="172" r="0.6" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="176" cy="155" r="1.0" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="913" cy="267" r="1.0" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="728" cy="71" r="0.45" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="656" cy="208" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="557" cy="62" r="0.45" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="707" cy="104" r="0.45" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="851" cy="85" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="381" cy="171" r="0.8" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="825" cy="150" r="0.8" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="842" cy="90" r="0.8" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="847" cy="75" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="438" cy="45" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="511" cy="54" r="1.0" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="226" cy="147" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="907" cy="225" r="0.8" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="628" cy="195" r="0.6" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="46" cy="177" r="0.6" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="237" cy="151" r="0.45" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="419" cy="261" r="0.8" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="410" cy="112" r="0.8" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="583" cy="101" r="0.8" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="430" cy="118" r="1.0" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="803" cy="52" r="0.6" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="590" cy="103" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="717" cy="216" r="1.0" fill="#c4b5fd" opacity="0.35"/>
+<circle cx="581" cy="42" r="0.8" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="478" cy="51" r="0.6" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="212" cy="269" r="1.0" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="585" cy="157" r="0.45" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="472" cy="192" r="0.8" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="598" cy="260" r="1.0" fill="#c4b5fd" opacity="0.18"/>
+<circle cx="877" cy="187" r="0.8" fill="#c4b5fd" opacity="0.25"/>
+<circle cx="79" cy="275" r="0.8" fill="#c4b5fd" opacity="0.5"/>
+<circle cx="275" cy="280" r="0.45" fill="#c4b5fd" opacity="0.35"/>
+<g filter="url(#glow)" opacity="0.60"><line x1="557" y1="117.4" x2="569" y2="112" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="557;566;557" dur="3.34s" begin="-0.03s" repeatCount="indefinite"/></line><circle cx="569" cy="112" r="2.51" fill="#f5f3ff"><animate attributeName="r" values="2.51;3.64;2.51" dur="3.34s" begin="-0.03s" repeatCount="indefinite"/></circle><title>1 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="710" y1="88.4" x2="722" y2="83" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="710;719;710" dur="3.16s" begin="-4.97s" repeatCount="indefinite"/></line><circle cx="722" cy="83" r="2.51" fill="#f5f3ff"><animate attributeName="r" values="2.51;3.64;2.51" dur="3.16s" begin="-4.97s" repeatCount="indefinite"/></circle><title>1 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="710" y1="146.4" x2="722" y2="141" stroke="url(#trail)" stroke-width="1.5" stroke-linecap="round"><animate attributeName="x1" values="710;719;710" dur="3.52s" begin="-5.71s" repeatCount="indefinite"/></line><circle cx="722" cy="141" r="2.69" fill="#f5f3ff"><animate attributeName="r" values="2.69;3.90;2.69" dur="3.52s" begin="-5.71s" repeatCount="indefinite"/></circle><title>4 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.84"><line x1="734" y1="208.9" x2="756" y2="199" stroke="url(#trail)" stroke-width="2.9" stroke-linecap="round"><animate attributeName="x1" values="734;753;734" dur="3.16s" begin="-2.63s" repeatCount="indefinite"/></line><circle cx="756" cy="199" r="5.35" fill="#f5f3ff"><animate attributeName="r" values="5.35;7.76;5.35" dur="3.16s" begin="-2.63s" repeatCount="indefinite"/></circle><title>21 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="761" y1="88.4" x2="773" y2="83" stroke="url(#trail)" stroke-width="1.6" stroke-linecap="round"><animate attributeName="x1" values="761;770;761" dur="3.70s" begin="-3.74s" repeatCount="indefinite"/></line><circle cx="773" cy="83" r="2.87" fill="#f5f3ff"><animate attributeName="r" values="2.87;4.16;2.87" dur="3.70s" begin="-3.74s" repeatCount="indefinite"/></circle><title>7 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.72"><line x1="790" y1="90.7" x2="807" y2="83" stroke="url(#trail)" stroke-width="2.1" stroke-linecap="round"><animate attributeName="x1" values="790;804;790" dur="2.98s" begin="-8.92s" repeatCount="indefinite"/></line><circle cx="807" cy="83" r="3.84" fill="#f5f3ff"><animate attributeName="r" values="3.84;5.57;3.84" dur="2.98s" begin="-8.92s" repeatCount="indefinite"/></circle><title>9 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.72"><line x1="790" y1="148.7" x2="807" y2="141" stroke="url(#trail)" stroke-width="2.3" stroke-linecap="round"><animate attributeName="x1" values="790;804;790" dur="3.34s" begin="-0.66s" repeatCount="indefinite"/></line><circle cx="807" cy="141" r="4.26" fill="#f5f3ff"><animate attributeName="r" values="4.26;6.18;4.26" dur="3.34s" begin="-0.66s" repeatCount="indefinite"/></circle><title>16 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="795" y1="175.4" x2="807" y2="170" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="795;804;795" dur="3.52s" begin="-1.03s" repeatCount="indefinite"/></line><circle cx="807" cy="170" r="2.63" fill="#f5f3ff"><animate attributeName="r" values="2.63;3.81;2.63" dur="3.52s" begin="-1.03s" repeatCount="indefinite"/></circle><title>3 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="795" y1="233.4" x2="807" y2="228" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="795;804;795" dur="3.88s" begin="-1.77s" repeatCount="indefinite"/></line><circle cx="807" cy="228" r="2.63" fill="#f5f3ff"><animate attributeName="r" values="2.63;3.81;2.63" dur="3.88s" begin="-1.77s" repeatCount="indefinite"/></circle><title>3 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.72"><line x1="807" y1="90.7" x2="824" y2="83" stroke="url(#trail)" stroke-width="2.3" stroke-linecap="round"><animate attributeName="x1" values="807;821;807" dur="4.24s" begin="-2.51s" repeatCount="indefinite"/></line><circle cx="824" cy="83" r="4.20" fill="#f5f3ff"><animate attributeName="r" values="4.20;6.09;4.20" dur="4.24s" begin="-2.51s" repeatCount="indefinite"/></circle><title>15 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="812" y1="117.4" x2="824" y2="112" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="812;821;812" dur="2.80s" begin="-2.88s" repeatCount="indefinite"/></line><circle cx="824" cy="112" r="2.57" fill="#f5f3ff"><animate attributeName="r" values="2.57;3.73;2.57" dur="2.80s" begin="-2.88s" repeatCount="indefinite"/></circle><title>2 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="812" y1="146.4" x2="824" y2="141" stroke="url(#trail)" stroke-width="1.5" stroke-linecap="round"><animate attributeName="x1" values="812;821;812" dur="2.98s" begin="-3.25s" repeatCount="indefinite"/></line><circle cx="824" cy="141" r="2.81" fill="#f5f3ff"><animate attributeName="r" values="2.81;4.07;2.81" dur="2.98s" begin="-3.25s" repeatCount="indefinite"/></circle><title>6 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="829" y1="117.4" x2="841" y2="112" stroke="url(#trail)" stroke-width="1.6" stroke-linecap="round"><animate attributeName="x1" values="829;838;829" dur="4.06s" begin="-5.47s" repeatCount="indefinite"/></line><circle cx="841" cy="112" r="2.87" fill="#f5f3ff"><animate attributeName="r" values="2.87;4.16;2.87" dur="4.06s" begin="-5.47s" repeatCount="indefinite"/></circle><title>7 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="829" y1="175.4" x2="841" y2="170" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="829;838;829" dur="2.80s" begin="-6.21s" repeatCount="indefinite"/></line><circle cx="841" cy="170" r="2.51" fill="#f5f3ff"><animate attributeName="r" values="2.51;3.64;2.51" dur="2.80s" begin="-6.21s" repeatCount="indefinite"/></circle><title>1 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="846" y1="88.4" x2="858" y2="83" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="846;855;846" dur="3.52s" begin="-7.69s" repeatCount="indefinite"/></line><circle cx="858" cy="83" r="2.51" fill="#f5f3ff"><animate attributeName="r" values="2.51;3.64;2.51" dur="3.52s" begin="-7.69s" repeatCount="indefinite"/></circle><title>1 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="846" y1="117.4" x2="858" y2="112" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="846;855;846" dur="3.70s" begin="-8.06s" repeatCount="indefinite"/></line><circle cx="858" cy="112" r="2.57" fill="#f5f3ff"><animate attributeName="r" values="2.57;3.73;2.57" dur="3.70s" begin="-8.06s" repeatCount="indefinite"/></circle><title>2 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="846" y1="175.4" x2="858" y2="170" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="846;855;846" dur="4.06s" begin="-8.80s" repeatCount="indefinite"/></line><circle cx="858" cy="170" r="2.51" fill="#f5f3ff"><animate attributeName="r" values="2.51;3.64;2.51" dur="4.06s" begin="-8.80s" repeatCount="indefinite"/></circle><title>1 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="863" y1="204.4" x2="875" y2="199" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="863;872;863" dur="3.88s" begin="-2.76s" repeatCount="indefinite"/></line><circle cx="875" cy="199" r="2.51" fill="#f5f3ff"><animate attributeName="r" values="2.51;3.64;2.51" dur="3.88s" begin="-2.76s" repeatCount="indefinite"/></circle><title>1 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="863" y1="233.4" x2="875" y2="228" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="863;872;863" dur="4.06s" begin="-3.13s" repeatCount="indefinite"/></line><circle cx="875" cy="228" r="2.57" fill="#f5f3ff"><animate attributeName="r" values="2.57;3.73;2.57" dur="4.06s" begin="-3.13s" repeatCount="indefinite"/></circle><title>2 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.72"><line x1="875" y1="61.6" x2="892" y2="54" stroke="url(#trail)" stroke-width="2.2" stroke-linecap="round"><animate attributeName="x1" values="875;889;875" dur="4.24s" begin="-3.50s" repeatCount="indefinite"/></line><circle cx="892" cy="54" r="4.08" fill="#f5f3ff"><animate attributeName="r" values="4.08;5.92;4.08" dur="4.24s" begin="-3.50s" repeatCount="indefinite"/></circle><title>13 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="880" y1="175.4" x2="892" y2="170" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="880;889;880" dur="3.34s" begin="-4.98s" repeatCount="indefinite"/></line><circle cx="892" cy="170" r="2.57" fill="#f5f3ff"><animate attributeName="r" values="2.57;3.73;2.57" dur="3.34s" begin="-4.98s" repeatCount="indefinite"/></circle><title>2 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="897" y1="233.4" x2="909" y2="228" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="897;906;897" dur="3.34s" begin="-8.31s" repeatCount="indefinite"/></line><circle cx="909" cy="228" r="2.57" fill="#f5f3ff"><animate attributeName="r" values="2.57;3.73;2.57" dur="3.34s" begin="-8.31s" repeatCount="indefinite"/></circle><title>2 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="914" y1="146.4" x2="926" y2="141" stroke="url(#trail)" stroke-width="1.4" stroke-linecap="round"><animate attributeName="x1" values="914;923;914" dur="4.06s" begin="-0.79s" repeatCount="indefinite"/></line><circle cx="926" cy="141" r="2.51" fill="#f5f3ff"><animate attributeName="r" values="2.51;3.64;2.51" dur="4.06s" begin="-0.79s" repeatCount="indefinite"/></circle><title>1 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.96"><line x1="899" y1="182.2" x2="926" y2="170" stroke="url(#trail)" stroke-width="3.4" stroke-linecap="round"><animate attributeName="x1" values="899;923;899" dur="4.24s" begin="-1.16s" repeatCount="indefinite"/></line><circle cx="926" cy="170" r="6.20" fill="#f5f3ff"><animate attributeName="r" values="6.20;8.99;6.20" dur="4.24s" begin="-1.16s" repeatCount="indefinite"/></circle><title>35 contribution(s)</title></g>
+<g filter="url(#glow)" opacity="0.60"><line x1="914" y1="204.4" x2="926" y2="199" stroke="url(#trail)" stroke-width="1.6" stroke-linecap="round"><animate attributeName="x1" values="914;923;914" dur="2.80s" begin="-1.53s" repeatCount="indefinite"/></line><circle cx="926" cy="199" r="2.87" fill="#f5f3ff"><animate attributeName="r" values="2.87;4.16;2.87" dur="2.80s" begin="-1.53s" repeatCount="indefinite"/></circle><title>7 contribution(s)</title></g>
+<text x="490" y="282" text-anchor="middle" fill="#71717a" font-family="Inter,Segoe UI,sans-serif" font-size="10" letter-spacing="1.5">EACH LIGHT REPRESENTS A DAY OF ACTIVITY</text>
+</svg>
