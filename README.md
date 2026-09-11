@@ -259,10 +259,16 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 
 ---
 
-## 🐍 Contribution Flow
+## 📈 Contribution Calendar
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" alt="GitHub contribution snake" />
+  <img src="https://ghchart.rshah.org/6E56CF/Likethan" alt="Likethan's GitHub contribution calendar" width="98%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/Likethan">
+    <strong>View live GitHub activity →</strong>
+  </a>
 </p>
 
 ---
@@ -299,30 +305,3 @@ Good software is more than functionality.
   <img src="https://img.shields.io/github/followers/Likethan?label=Followers&style=for-the-badge&logo=github&logoColor=white" />
   <img src="https://img.shields.io/github/stars/Likethan?label=Stars%20Received&style=for-the-badge&logo=github&logoColor=white" />
 </p>
-
----
-
-## 🤝 Let's Connect
-
-<p align="center">
-  <a href="https://github.com/Likethan">
-    <img src="https://img.shields.io/badge/GitHub-Likethan-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="http://likethan-portfolio-eohs.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-  <a href="https://leetcode.com/u/Likethan/">
-    <img src="https://img.shields.io/badge/LeetCode-Profile-F89F1B?style=for-the-badge&logo=leetcode&logoColor=white" />
-  </a>
-</p>
-
-<div align="center">
-
-### Thanks for stopping by 👋
-
-**Build useful things. Make them memorable.**
-
-</div>
