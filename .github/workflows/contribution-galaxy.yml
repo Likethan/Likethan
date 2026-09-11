@@ -15,7 +15,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Generate galaxy
+      - name: Install image dependency
+        run: python -m pip install --disable-pip-version-check Pillow
+
+      - name: Generate animated galaxy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/generate_contribution_galaxy.py
