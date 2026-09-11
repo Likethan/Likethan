@@ -262,7 +262,7 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 ## 🌌 Contribution Galaxy
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/contribution-galaxy.svg" alt="Likethan's animated contribution galaxy" width="92%" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/contribution-galaxy.gif" alt="Likethan's animated contribution galaxy" width="92%" />
 </p>
 
 ---
