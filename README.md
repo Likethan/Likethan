@@ -259,16 +259,10 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 
 ---
 
-## 📈 Contribution Calendar
+## 🌌 Contribution Galaxy
 
 <p align="center">
-  <img src="https://ghchart.rshah.org/6E56CF/Likethan" alt="Likethan's GitHub contribution calendar" width="98%" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/Likethan">
-    <strong>View live GitHub activity →</strong>
-  </a>
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/contribution-galaxy.svg" alt="Likethan's animated contribution galaxy" width="92%" />
 </p>
 
 ---
