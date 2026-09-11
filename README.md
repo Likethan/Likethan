@@ -1,72 +1,73 @@
 <p align="center">
-  <img src="./assets/jujutsu-kaisen-profile.png" width="100%" alt="Likethan K J">
+  <img src="./assets/jujutsu-kaisen-profile.png" width="100%" alt="Likethan K J — Developer Profile">
 </p>
+
 <div align="center">
 
-# Hi 👋, I'm Likethan K J
+# Likethan K J
 
-### Full Stack Developer · AI Engineer · Building Intelligent Digital Products
+### AI Engineer · Full Stack Developer · Product-Focused Builder
 
-**I design systems where software, AI, and user experience work together.**
+**Designing, engineering, and shipping intelligent digital products.**
 
 <p>
-  <a href="https://github.com/Likethan">GitHub</a> •
-  <a href="https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true">LinkedIn</a> •
-  <a href="http://likethan-portfolio-eohs.vercel.app/">Portfolio</a>
+  <a href="https://github.com/Likethan">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/likethan-k-j-b434b632b/?skipRedirect=true">LinkedIn</a> ·
+  <a href="http://likethan-portfolio-eohs.vercel.app/">Portfolio</a> ·
+  <a href="https://leetcode.com/u/Likethan/">LeetCode</a>
 </p>
 
 </div>
 
 ---
 
-## ◈ About
+## 👨‍💻 About Me
 
-I'm a final-year **Artificial Intelligence & Data Science student** focused on building production-minded software across the full stack.
+I'm a final-year **Artificial Intelligence & Data Science student** building software at the intersection of **AI, full-stack engineering, and product design**.
 
-My interests sit at the intersection of:
+I enjoy turning ideas into real, usable systems — from **architecture and APIs** to **AI workflows, interfaces, automation, and deployment**.
 
-**Software Engineering × Artificial Intelligence × Product Design**
+```text
+AI Systems       → LLMs · RAG · Agents · AI Workflows
+Software         → Python · React · TypeScript · APIs
+Engineering      → Architecture · Git · Automation · DevEx
+Product          → UX · Interaction · Visual Design
+Security         → Web Security · Reconnaissance · Risk Analysis
+```
 
-I enjoy taking an idea from a blank screen and turning it into a working system — from architecture and APIs to interfaces, AI workflows, deployment, and iteration.
-
-- Building full-stack applications with a product-first mindset
-- Exploring LLMs, RAG, agentic workflows, and AI automation
-- Designing interfaces that feel intentional rather than template-driven
-- Working with Python across AI, backend, data, and automation
-- Continuously improving software architecture and engineering fundamentals
-
-> **Think deeply. Build intentionally. Ship continuously.**
+> **I don't just build features. I build systems that solve problems.**
 
 ---
 
-## ⚡ Engineering Focus
+## ⚙️ Engineering Focus
 
-| Discipline | What I'm Exploring |
+| Area | Focus |
 | --- | --- |
-| **Full Stack** | Modern web applications, APIs, authentication, dashboards |
-| **Artificial Intelligence** | LLM applications, agents, RAG, AI workflows |
-| **Backend** | Python services, REST APIs, system architecture |
-| **Frontend** | React, TypeScript, interaction design, motion |
-| **Data** | Data processing, visualization, machine learning |
-| **Security** | Web security, reconnaissance, attack-surface analysis |
-| **Product Design** | UX systems, SaaS interfaces, interaction patterns |
+| **Artificial Intelligence** | LLM applications, RAG, agentic systems, workflow orchestration |
+| **Full Stack Development** | React, TypeScript, Python, APIs, dashboards, product interfaces |
+| **Backend Engineering** | REST APIs, service architecture, automation, integrations |
+| **Data & ML** | Data processing, visualization, model experimentation |
+| **Security Engineering** | Web reconnaissance, attack-surface analysis, security intelligence |
+| **Product Engineering** | UX systems, interaction design, motion, developer experience |
 
 ---
 
-## 🧩 Technology
+## 🛠️ Tech Stack
 
 ### Languages
 
 <p>
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
+<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
 </p>
 
 ### Frontend
 
 <p>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
 <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" />
 <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" />
@@ -81,7 +82,7 @@ I enjoy taking an idea from a blank screen and turning it into a working system 
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
 </p>
 
-### AI & Data
+### AI, Data & Tooling
 
 <p>
 <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
@@ -93,7 +94,7 @@ I enjoy taking an idea from a blank screen and turning it into a working system 
 <img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white" />
 </p>
 
-### Databases & Infrastructure
+### Databases, Cloud & Dev Tools
 
 <p>
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
@@ -106,89 +107,87 @@ I enjoy taking an idea from a blank screen and turning it into a working system 
 
 ---
 
-## ⚡ Selected Builds
-
-> Not just applications — experiments in intelligent systems, autonomous workflows, and human-centered software.
+## 🚀 Selected Builds
 
 ### ◈ InsightForge
+**AI Research & Strategic Intelligence Platform**
 
-**Evidence Intelligence Engine**
+An autonomous research system that combines live information, document intelligence, multi-agent workflows, analysis, visualization, and structured report generation to turn fragmented information into decision-ready insights.
 
-A research system that transforms fragmented documents and live information into **traceable evidence, competing insights, and decision-ready intelligence**.
-
-<p>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" />
-<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langgraph&logoColor=white" />
-<img src="https://img.shields.io/badge/Gemini-4285F4?style=flat-square&logo=googlegemini&logoColor=white" />
-<img src="https://img.shields.io/badge/PyMuPDF-3776AB?style=flat-square" />
-<img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" />
-<img src="https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white" />
-</p>
+`Python` `Streamlit` `LangGraph` `Gemini` `PyMuPDF` `Pandas` `Plotly`
 
 ---
 
 ### ◈ CyberAnalyzer
+**Autonomous Web Security Investigation Platform**
 
-**Autonomous Web Security Investigator**
+A security analysis platform that maps a website's attack surface, performs reconnaissance, evaluates security signals, and connects technical findings into actionable risk intelligence.
 
-A security intelligence platform that investigates a website's attack surface and connects individual findings into meaningful security risks.
-
-<p>
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" />
-<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
-</p>
+`Python` `Flask` `React` `TypeScript` `Tailwind CSS`
 
 ---
 
 ### ◈ InterviewOS
-
 **Adaptive AI Interview Simulator**
 
-An interview environment that dynamically adapts to the candidate instead of following a fixed question-and-answer flow.
+An interactive interview environment designed to simulate realistic technical and communication rounds, with adaptive questioning and AI-assisted evaluation instead of a fixed question flow.
 
-<p>
-<img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
-<img src="https://img.shields.io/badge/AI-6E56CF?style=flat-square" />
-<img src="https://img.shields.io/badge/Speech_Processing-444444?style=flat-square" />
-</p>
+`React` `TypeScript` `Vite` `AI` `Speech Processing`
 
 ---
 
-## 🧠 Currently Exploring
+### ◈ CampusHub
+**Unified Student Life Management Platform**
+
+A full-stack campus platform bringing attendance, assignments, placements, events, clubs, notes, student profiles, and an AI assistant into one product-focused interface.
+
+`React` `TypeScript` `Vite` `Tailwind CSS` `Framer Motion` `Recharts`
+
+---
+
+## 🧠 How I Build
 
 ```text
-                         HOW I ENGINEER
+                         FROM IDEA → PRODUCT
 
-        EXPERIENCE                 SYSTEMS                 INTELLIGENCE
-             │                        │                         │
-             ▼                        ▼                         ▼
-       ┌─────────────┐          ┌─────────────┐          ┌─────────────┐
-       │ Design      │          │ Architecture│          │ RAG         │
-       │ UX          │ ───────► │ APIs        │ ───────► │ Agents      │
-       │ Motion      │          │ Backend     │          │ Multi-Agent │
-       │ DevEx       │          │ Scale       │          │ Evaluation  │
-       └─────────────┘          └─────────────┘          └─────────────┘
-             │                        │                         │
-             └────────────────────────┼─────────────────────────┘
-                                      ▼
-                         ┌─────────────────────────┐
-                         │   INTELLIGENT PRODUCTS  │
-                         │                         │
-                         │  THINK → BUILD → SHIP   │
-                         └─────────────────────────┘
+       PROBLEM                 SYSTEM                 EXPERIENCE
+          │                      │                        │
+          ▼                      ▼                        ▼
+     Understand              Architect                 Design
+     Research                APIs                      UX
+     Define                  Data                      Motion
+          │                      │                        │
+          └──────────────┬───────┴──────────────┬─────────┘
+                         ▼                      ▼
+                    INTELLIGENCE            DELIVERY
+                         │                      │
+                    LLM / RAG               Test
+                    Agents                  Deploy
+                    Automation              Iterate
+                         │                      │
+                         └──────────┬───────────┘
+                                    ▼
+                         ┌─────────────────────┐
+                         │  THINK → BUILD →    │
+                         │  TEST → SHIP →      │
+                         │  IMPROVE            │
+                         └─────────────────────┘
 ```
 
 ---
 
-## 📊 GitHub Activity
+## 🔭 Currently Exploring
 
-> **Live contribution activity — without a cached contribution-count card.**
+- **Agentic AI** — multi-agent orchestration, tool use, evaluation, and reliable workflows
+- **RAG Systems** — retrieval pipelines, document intelligence, grounding, and context engineering
+- **Backend Engineering** — API design, architecture, scalability, and automation
+- **System Design** — designing maintainable software beyond individual features
+- **Developer Experience** — tooling, automation, clean workflows, and reproducible development
+- **Security** — web reconnaissance, attack-surface mapping, and practical security analysis
+
+---
+
+## 📊 GitHub Activity
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=0d1117&color=ffffff&line=6E56CF&point=ffffff&area=true&hide_border=true" width="98%" />
@@ -205,24 +204,18 @@ An interview environment that dynamically adapts to the candidate instead of fol
 
 ---
 
-## 🏆 Achievements & Milestones
-
-> **A snapshot of what has been built, explored, and shipped — without relying on third-party trophy APIs.**
+## 🏆 Engineering Highlights
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI%20Systems-InsightForge-181717?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Web%20Security-CyberAnalyzer-181717?style=for-the-badge&logo=owasp&logoColor=white" />
-  <img src="https://img.shields.io/badge/AI%20Product-InterviewOS-181717?style=for-the-badge&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/Security-CyberAnalyzer-181717?style=for-the-badge&logo=owasp&logoColor=white" />
+  <img src="https://img.shields.io/badge/Full%20Stack-CampusHub-181717?style=for-the-badge&logo=react&logoColor=white" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/LLMs-RAG%20%7C%20Agents%20%7C%20Workflows-6E56CF?style=flat-square" />
-  <img src="https://img.shields.io/badge/Full%20Stack-React%20%7C%20Python%20%7C%20APIs-6E56CF?style=flat-square" />
-  <img src="https://img.shields.io/badge/Engineering-Design%20%7C%20Architecture%20%7C%20DevEx-6E56CF?style=flat-square" />
-</p>
-
-<p align="center">
-  <sub>Built around real projects and engineering focus — no fabricated awards, ranks, or achievements.</sub>
+  <img src="https://img.shields.io/badge/AI-LLMs%20%7C%20RAG%20%7C%20Agents-6E56CF?style=flat-square" />
+  <img src="https://img.shields.io/badge/Engineering-APIs%20%7C%20Architecture%20%7C%20Automation-6E56CF?style=flat-square" />
+  <img src="https://img.shields.io/badge/Product-UX%20%7C%20Motion%20%7C%20DevEx-6E56CF?style=flat-square" />
 </p>
 
 ---
@@ -230,41 +223,37 @@ An interview environment that dynamically adapts to the candidate instead of fol
 ## 🐍 Contribution Flow
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/github-contribution-grid-snake-dark.svg" alt="GitHub contribution snake" />
 </p>
 
 ---
 
-## 🎯 2026
+## 🎯 2026 — Build With Intent
 
-**Build → Learn → Experiment → Ship → Repeat**
-
-- 🚀 Ship production-quality software
-- 🤖 Build deeper AI systems instead of surface-level AI features
-- 🧠 Strengthen DSA, system design, and backend engineering
-- 🌐 Contribute to meaningful open-source projects
-- 🛠️ Turn experimental ideas into usable products
+```text
+BUILD       → production-minded software
+LEARN       → DSA · system design · backend engineering
+EXPLORE     → AI · RAG · agents · security
+SHIP        → projects people can actually use
+CONTRIBUTE  → open source · collaboration · community
+```
 
 ---
 
-## ◇ Beyond the Code
+## 🌐 Beyond Code
 
-I care about more than making something **work**.
+Good software is more than functionality.
 
-I care about:
+**Architecture should be intentional.**  
+**Interfaces should feel considered.**  
+**AI should solve a real problem.**  
+**Products should be useful, not just impressive.**
 
-**How it is architected.**  
-**How it feels to use.**  
-**How it scales.**  
-**How intelligently it behaves.**
-
-That's the direction I'm building toward.
+> **Think deeply. Build intentionally. Ship continuously.**
 
 ---
 
 ## 👁 Profile Reach
-
-> **A clean visibility snapshot — focused only on how the profile is being discovered and followed.**
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Likethan&label=Profile%20Views&color=6E56CF&style=for-the-badge" />
@@ -272,17 +261,9 @@ That's the direction I'm building toward.
   <img src="https://img.shields.io/github/stars/Likethan?label=Stars%20Received&style=for-the-badge&logo=github&logoColor=white" />
 </p>
 
-<p align="center">
-  <b>👁 Profile Views</b> · <b>👥 Followers</b> · <b>⭐ Stars Received</b>
-</p>
-
-<p align="center">
-  <sub>Visibility metrics are kept separate from contribution activity, streaks, languages, and project milestones.</sub>
-</p>
-
 ---
 
-## 🤝 Connect
+## 🤝 Let's Connect
 
 <p align="center">
   <a href="https://github.com/Likethan">
@@ -293,6 +274,9 @@ That's the direction I'm building toward.
   </a>
   <a href="http://likethan-portfolio-eohs.vercel.app/">
     <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://leetcode.com/u/Likethan/">
+    <img src="https://img.shields.io/badge/LeetCode-Profile-F89F1B?style=for-the-badge&logo=leetcode&logoColor=white" />
   </a>
 </p>
 
