@@ -21,21 +21,33 @@
 
 ---
 
-## 👨‍💻 About Me
+## ⚡ About Me
 
-I'm a final-year **Artificial Intelligence & Data Science student** building software at the intersection of **AI, full-stack engineering, and product design**.
+I believe good software starts **before the first line of code**.
 
-I enjoy turning ideas into real, usable systems — from **architecture and APIs** to **AI workflows, interfaces, automation, and deployment**.
+It starts with a problem worth solving, a system worth designing, and an experience worth caring about.
+
+I build where **intelligence meets engineering** — from LLMs, RAG, and agentic workflows to full-stack products, backend systems, automation, and security. I enjoy taking an idea from a rough thought to a working system, then questioning everything that can make it **faster, simpler, smarter, and more useful**.
+
+I don't chase technology because it's new.
+
+**I understand it, break it, combine it, and engineer it into something worth using.**
 
 ```text
-AI Systems       → LLMs · RAG · Agents · AI Workflows
-Software         → Python · React · TypeScript · APIs
-Engineering      → Architecture · Git · Automation · DevEx
-Product          → UX · Interaction · Visual Design
-Security         → Web Security · Reconnaissance · Risk Analysis
+01  QUESTION   → Why does this need to exist?
+02  THINK      → Understand the problem beneath the problem.
+03  ARCHITECT  → Design systems that can evolve.
+04  BUILD      → Turn ideas into working software.
+05  BREAK      → Test assumptions. Find the weak points.
+06  REFINE     → Remove complexity. Improve the experience.
+07  SHIP       → Put it in the hands of real users.
 ```
 
-> **I don't just build features. I build systems that solve problems.**
+My current obsession is the space between **AI and real-world software** — building systems where intelligence isn't a feature added on top, but part of the product itself.
+
+I care about **clean architecture, thoughtful interfaces, useful AI, developer experience, and shipping things that deserve to exist.**
+
+> **Think deeply. Engineer deliberately. Break relentlessly. Ship continuously.**
 
 ---
 
