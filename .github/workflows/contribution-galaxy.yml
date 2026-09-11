@@ -1,6 +1,10 @@
 name: Generate Contribution Galaxy
 
 on:
+  push:
+    paths:
+      - "scripts/generate_contribution_galaxy.py"
+      - ".github/workflows/contribution-galaxy.yml"
   schedule:
     - cron: "17 0 * * *"
   workflow_dispatch:
@@ -22,6 +26,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/generate_contribution_galaxy.py
+
+      - name: Point README to animated GIF
+        run: |
+          sed -i 's#contribution-galaxy\.svg#contribution-galaxy.gif#g' README.md
+          if git diff --quiet -- README.md; then
+            echo "README already points to the GIF"
+          else
+            git config user.name "Likethan"
+            git config user.email "Likethan@users.noreply.github.com"
+            git add README.md
+            git commit -m "docs: use animated contribution galaxy"
+            git push origin HEAD:main
+          fi
 
       - name: Publish visualization
         uses: JamesIves/github-pages-deploy-action@v4
