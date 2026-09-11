@@ -1,11 +1,15 @@
 import json
+import math
 import os
 import random
 import urllib.request
-from xml.sax.saxutils import escape
+from PIL import Image, ImageDraw, ImageFilter
 
 USERNAME = "Likethan"
-OUTPUT = "dist/contribution-galaxy.svg"
+OUTPUT = "dist/contribution-galaxy.gif"
+WIDTH, HEIGHT = 980, 300
+FRAMES = 32
+FRAME_MS = 90
 
 QUERY = """
 query($login: String!) {
@@ -53,109 +57,126 @@ def level_value(level):
     }.get(level, 0)
 
 
+def lerp(a, b, t):
+    return a + (b - a) * t
+
+
 def main():
     calendar = fetch_calendar()
-    weeks = calendar["weeks"]
     total = calendar["totalContributions"]
 
     random.seed(20260911)
-    width, height = 980, 300
-    left, top = 42, 58
+    left, top = 44, 58
     cell_x, cell_y = 17, 29
 
-    stars = []
-    for wi, week in enumerate(weeks):
+    contributions = []
+    for wi, week in enumerate(calendar["weeks"]):
         for di, day in enumerate(week["contributionDays"]):
             level = level_value(day["contributionLevel"])
             count = int(day["contributionCount"])
             if level == 0:
                 continue
-            x = left + wi * cell_x
-            y = top + di * cell_y
-            size = 1.5 + level * 0.9 + min(count, 25) * 0.055
-            stars.append((x, y, size, level, count, wi * 7 + di))
+            contributions.append({
+                "x": left + wi * cell_x,
+                "y": top + di * cell_y,
+                "level": level,
+                "count": count,
+                "seed": wi * 7 + di,
+            })
 
-    svg = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
-        '<defs>',
-        '<radialGradient id="bg"><stop offset="0" stop-color="#17102d"/><stop offset="0.55" stop-color="#090817"/><stop offset="1" stop-color="#03040a"/></radialGradient>',
-        '<radialGradient id="nebula"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".24"/><stop offset=".5" stop-color="#4f46e5" stop-opacity=".09"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>',
-        '<linearGradient id="meteorTrail" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#7c3aed" stop-opacity="0"/><stop offset=".5" stop-color="#a78bfa" stop-opacity=".32"/><stop offset="1" stop-color="#ffffff" stop-opacity=".98"/></linearGradient>',
-        '<filter id="glow"><feGaussianBlur stdDeviation="2.8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
-        '<filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>',
-        '</defs>',
-        '<rect width="100%" height="100%" rx="18" fill="url(#bg)"/>',
-        '<ellipse cx="490" cy="154" rx="430" ry="132" fill="url(#nebula)" filter="url(#soft)"/>',
-        '<text x="42" y="31" fill="#f5f3ff" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="700" letter-spacing="2">CONTRIBUTION GALAXY</text>',
-        f'<text x="938" y="31" text-anchor="end" fill="#a1a1aa" font-family="Inter,Segoe UI,sans-serif" font-size="12">{total:,} contributions · LAST 12 MONTHS</text>',
+    stars = [
+        (random.randint(18, WIDTH - 18), random.randint(45, HEIGHT - 22), random.choice([1, 1, 1, 2]))
+        for _ in range(130)
     ]
 
-    # Background stars.
-    for _ in range(105):
-        x = random.randint(18, width - 18)
-        y = random.randint(45, height - 20)
-        r = random.choice([0.45, 0.6, 0.8, 1.0])
-        op = random.choice([0.16, 0.22, 0.3, 0.42])
-        svg.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#ddd6fe" opacity="{op}"/>')
+    frames = []
+    for frame_no in range(FRAMES):
+        base = Image.new("RGB", (WIDTH, HEIGHT), (4, 4, 12))
+        draw = ImageDraw.Draw(base)
 
-    # Each real contribution day becomes a small meteor. The meteor travels along
-    # a diagonal path and leaves a fading tail before returning to its origin.
-    for index, (x, y, size, level, count, seed) in enumerate(stars):
-        duration = 3.4 + (seed % 7) * 0.22
-        delay = -((seed * 29) % 1200) / 100.0
-        travel_x = 18 + level * 5
-        travel_y = 12 + level * 4
-        tail = 12 + level * 5
-        opacity = min(0.92, 0.38 + level * 0.13)
-        stroke = max(1.1, size * 0.48)
-        safe_count = escape(str(count))
+        # Deep-space gradient.
+        for y in range(HEIGHT):
+            t = y / HEIGHT
+            r = int(5 + 7 * (1 - abs(t - 0.5) * 2))
+            g = int(4 + 4 * (1 - abs(t - 0.5) * 2))
+            b = int(13 + 18 * (1 - abs(t - 0.5) * 2))
+            draw.line((0, y, WIDTH, y), fill=(r, g, b))
 
-        svg.append(
-            f'<g filter="url(#glow)" opacity="{opacity:.2f}">'
-            f'<line x1="{x-tail:.1f}" y1="{y+tail*.55:.1f}" x2="{x:.1f}" y2="{y:.1f}" '
-            f'stroke="url(#meteorTrail)" stroke-width="{stroke:.1f}" stroke-linecap="round">'
-            f'<animate attributeName="x1" values="{x-tail:.1f};{x+travel_x-tail:.1f};{x-tail:.1f}" '
-            f'dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="y1" values="{y+tail*.55:.1f};{y-travel_y+tail*.55:.1f};{y+tail*.55:.1f}" '
-            f'dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="x2" values="{x:.1f};{x+travel_x:.1f};{x:.1f}" '
-            f'dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="y2" values="{y:.1f};{y-travel_y:.1f};{y:.1f}" '
-            f'dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            '</line>'
-            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{size:.2f}" fill="#ffffff">'
-            f'<animate attributeName="cx" values="{x:.1f};{x+travel_x:.1f};{x:.1f}" '
-            f'dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="cy" values="{y:.1f};{y-travel_y:.1f};{y:.1f}" '
-            f'dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="r" values="{size:.2f};{size*1.5:.2f};{size:.2f}" '
-            f'dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            '</circle>'
-            f'<title>{safe_count} contribution(s)</title>'
-            '</g>'
-        )
+        # Soft purple/blue nebula.
+        glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+        gd = ImageDraw.Draw(glow)
+        gd.ellipse((80, 55, 900, 275), fill=(88, 52, 180, 45))
+        gd.ellipse((250, 25, 760, 250), fill=(55, 65, 190, 30))
+        glow = glow.filter(ImageFilter.GaussianBlur(38))
+        base = Image.alpha_composite(base.convert("RGBA"), glow)
+        draw = ImageDraw.Draw(base)
 
-    # A few independent long meteors add a subtle cinematic shooting-star layer.
-    for meteor in range(7):
-        sx = 110 + meteor * 125
-        sy = 70 + (meteor * 37) % 150
-        length = 28 + (meteor % 3) * 12
-        duration = 5.5 + meteor * 0.35
-        delay = -(meteor * 1.7)
-        svg.append(
-            f'<g opacity=".5" filter="url(#glow)">'
-            f'<line x1="{sx}" y1="{sy}" x2="{sx+length}" y2="{sy-length*.55}" stroke="url(#meteorTrail)" stroke-width="1.2" stroke-linecap="round">'
-            f'<animate attributeName="x1" values="{sx};{sx+length*2};{sx}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="x2" values="{sx+length};{sx+length*2+length};{sx+length}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            '</line></g>'
-        )
+        for x, y, r in stars:
+            alpha = random.choice([45, 60, 80, 105])
+            draw.ellipse((x-r, y-r, x+r, y+r), fill=(205, 196, 255, alpha))
 
-    svg.append('<text x="490" y="282" text-anchor="middle" fill="#71717a" font-family="Inter,Segoe UI,sans-serif" font-size="10" letter-spacing="1.5">EACH METEOR REPRESENTS A DAY OF ACTIVITY</text>')
-    svg.append('</svg>')
+        # Header.
+        draw.text((42, 15), "CONTRIBUTION GALAXY", fill=(245, 243, 255, 255))
+        label = f"{total:,} contributions  ·  LAST 12 MONTHS"
+        bbox = draw.textbbox((0, 0), label)
+        draw.text((WIDTH - 42 - (bbox[2] - bbox[0]), 16), label, fill=(161, 161, 170, 255))
+
+        # Real contribution days become moving meteors.
+        for item in contributions:
+            x, y = item["x"], item["y"]
+            level, count, seed = item["level"], item["count"], item["seed"]
+            phase = ((frame_no / FRAMES) + ((seed * 0.071) % 1.0)) % 1.0
+            # Fade at the start/end so the meteor appears to shoot through the point.
+            fade = math.sin(math.pi * phase)
+            travel_x = 24 + level * 7
+            travel_y = 13 + level * 5
+            head_x = x + travel_x * phase
+            head_y = y - travel_y * phase
+            size = 2.0 + level * 0.9 + min(count, 25) * 0.055
+            tail = 10 + level * 6 + min(count, 20) * 0.12
+
+            # Layered tail for a cinematic glow.
+            layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+            ld = ImageDraw.Draw(layer)
+            tx = head_x - tail
+            ty = head_y + tail * 0.52
+            ld.line((tx, ty, head_x, head_y), fill=(167, 139, 250, int(80 * fade)), width=max(2, int(size)))
+            layer = layer.filter(ImageFilter.GaussianBlur(3))
+            base = Image.alpha_composite(base, layer)
+            draw = ImageDraw.Draw(base)
+
+            draw.line((tx, ty, head_x, head_y), fill=(221, 214, 254, int(165 * fade)), width=max(1, int(size * 0.65)))
+            rr = max(1.2, size * (0.72 + 0.55 * fade))
+            a = int(120 + 135 * fade)
+            draw.ellipse((head_x-rr, head_y-rr, head_x+rr, head_y+rr), fill=(255, 255, 255, a))
+
+        # A few independent long cinematic shooting stars.
+        for meteor in range(8):
+            sx = 80 + meteor * 120
+            sy = 65 + (meteor * 41) % 145
+            phase = ((frame_no / FRAMES) + meteor * 0.17) % 1.0
+            mx = sx + 70 * phase
+            my = sy - 38 * phase
+            tail = 38
+            draw.line((mx-tail, my+tail*0.55, mx, my), fill=(196, 181, 253, int(150 * math.sin(math.pi*phase))), width=2)
+            draw.ellipse((mx-2, my-2, mx+2, my+2), fill=(255, 255, 255, 210))
+
+        footer = "EACH METEOR REPRESENTS A DAY OF ACTIVITY"
+        bbox = draw.textbbox((0, 0), footer)
+        draw.text(((WIDTH - (bbox[2]-bbox[0]))/2, 282), footer, fill=(113, 113, 122, 255))
+
+        frames.append(base.convert("RGB"))
 
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
-    with open(OUTPUT, "w", encoding="utf-8") as file:
-        file.write("\n".join(svg))
+    frames[0].save(
+        OUTPUT,
+        save_all=True,
+        append_images=frames[1:],
+        duration=FRAME_MS,
+        loop=0,
+        optimize=True,
+        disposal=2,
+    )
 
 
 if __name__ == "__main__":
