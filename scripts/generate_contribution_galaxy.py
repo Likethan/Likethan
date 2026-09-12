@@ -74,7 +74,6 @@ def main():
             if level == 0:
                 continue
             x = left + wi * cell_w
-            # Contribution intensity controls building height.
             height = 22 + level * 26 + min(count, 35) * 2.4
             height = min(height, 210)
             buildings.append({
@@ -87,7 +86,6 @@ def main():
                 "seed": wi * 7 + di,
             })
 
-    # Background skyline silhouettes make the active contribution buildings stand out.
     silhouettes = []
     x = 0
     while x < WIDTH:
@@ -96,7 +94,6 @@ def main():
         silhouettes.append((x, base_y - h, w, h))
         x += w + random.randint(3, 9)
 
-    # Flying pixel cars / drones provide subtle motion between frames.
     vehicles = [
         {"x": random.randint(0, WIDTH), "y": random.choice([220, 245, 270]), "speed": random.choice([2, 3, 4])}
         for _ in range(7)
@@ -148,10 +145,10 @@ def main():
             x, y, w, h = building["x"], building["y"], building["w"], building["h"]
             level, count, seed = building["level"], building["count"], building["seed"]
 
-            # Building body and roof.
-            body = [(20, 25), (31, 38), (45, 58), (61, 76)][level]
-            roof = [(30, 34), (47, 43), (72, 62), (104, 85)][level]
-            highlight = [(56, 58), (83, 82), (125, 110), (174, 151)][level]
+            # RGB colors: each level gets a distinct building treatment.
+            body = [(20, 25, 45), (31, 38, 65), (45, 58, 92), (61, 76, 120), (76, 96, 145)][level]
+            roof = [(30, 34, 55), (47, 43, 75), (72, 62, 105), (104, 85, 140), (132, 105, 170)][level]
+            highlight = [(56, 58, 80), (83, 82, 110), (125, 110, 145), (174, 151, 190), (205, 181, 225)][level]
             draw.rectangle((x, y, x + w, base_y), fill=body)
             draw.rectangle((x, y, x + w, y + 3), fill=roof)
             draw.rectangle((x + 2, y + 4, x + 3, base_y - 1), fill=highlight)
