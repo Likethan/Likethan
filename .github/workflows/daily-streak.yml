@@ -1,0 +1,27 @@
+name: Daily GitHub Streak
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  streak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Record daily contribution
+        run: |
+          git config user.name "Likethan"
+          git config user.email "Likethan@users.noreply.github.com"
+          printf '%s\n' "$(TZ=Asia/Kolkata date +%Y-%m-%d)" >> activity/daily-streak.log
+          git add activity/daily-streak.log
+          git commit -m "chore: maintain daily GitHub streak"
+          git push origin HEAD:main
