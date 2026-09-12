@@ -31,6 +31,7 @@ jobs:
         run: |
           sed -i 's#contribution-galaxy\.gif#contribution-city.gif#g' README.md
           sed -i 's#contribution-galaxy\.svg#contribution-city.gif#g' README.md
+          sed -i 's#Contribution Galaxy#Contribution City#g' README.md
           if git diff --quiet -- README.md; then
             echo "README already points to the pixel city"
           else
