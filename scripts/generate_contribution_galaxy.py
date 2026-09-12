@@ -1,15 +1,14 @@
 import json
-import math
 import os
 import random
 import urllib.request
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw
 
 USERNAME = "Likethan"
-OUTPUT = "dist/contribution-galaxy.gif"
-WIDTH, HEIGHT = 980, 300
-FRAMES = 32
-FRAME_MS = 90
+OUTPUT = "dist/contribution-city.gif"
+WIDTH, HEIGHT = 980, 360
+FRAMES = 24
+FRAME_MS = 120
 
 QUERY = """
 query($login: String!) {
@@ -36,7 +35,7 @@ def fetch_calendar():
         headers={
             "Authorization": f"bearer {token}",
             "Content-Type": "application/json",
-            "User-Agent": "Likethan-contribution-galaxy",
+            "User-Agent": "Likethan-contribution-city",
         },
         method="POST",
     )
@@ -57,115 +56,137 @@ def level_value(level):
     }.get(level, 0)
 
 
-def lerp(a, b, t):
-    return a + (b - a) * t
-
-
 def main():
     calendar = fetch_calendar()
     total = calendar["totalContributions"]
+    random.seed(20260912)
 
-    random.seed(20260911)
-    left, top = 44, 58
-    cell_x, cell_y = 17, 29
+    # Convert the real 52-week contribution calendar into a skyline.
+    buildings = []
+    left = 34
+    base_y = 305
+    cell_w = 17
 
-    contributions = []
     for wi, week in enumerate(calendar["weeks"]):
         for di, day in enumerate(week["contributionDays"]):
-            level = level_value(day["contributionLevel"])
             count = int(day["contributionCount"])
+            level = level_value(day["contributionLevel"])
             if level == 0:
                 continue
-            contributions.append({
-                "x": left + wi * cell_x,
-                "y": top + di * cell_y,
+            x = left + wi * cell_w
+            # Contribution intensity controls building height.
+            height = 22 + level * 26 + min(count, 35) * 2.4
+            height = min(height, 210)
+            buildings.append({
+                "x": x,
+                "y": base_y - height,
+                "w": 12,
+                "h": height,
                 "level": level,
                 "count": count,
                 "seed": wi * 7 + di,
             })
 
-    stars = [
-        (random.randint(18, WIDTH - 18), random.randint(45, HEIGHT - 22), random.choice([1, 1, 1, 2]))
-        for _ in range(130)
+    # Background skyline silhouettes make the active contribution buildings stand out.
+    silhouettes = []
+    x = 0
+    while x < WIDTH:
+        w = random.choice([18, 24, 30, 36])
+        h = random.randint(35, 110)
+        silhouettes.append((x, base_y - h, w, h))
+        x += w + random.randint(3, 9)
+
+    # Flying pixel cars / drones provide subtle motion between frames.
+    vehicles = [
+        {"x": random.randint(0, WIDTH), "y": random.choice([220, 245, 270]), "speed": random.choice([2, 3, 4])}
+        for _ in range(7)
     ]
 
     frames = []
     for frame_no in range(FRAMES):
-        base = Image.new("RGB", (WIDTH, HEIGHT), (4, 4, 12))
-        draw = ImageDraw.Draw(base)
+        img = Image.new("RGB", (WIDTH, HEIGHT), (6, 8, 18))
+        draw = ImageDraw.Draw(img)
 
-        # Deep-space gradient.
+        # Pixel-art dusk gradient.
         for y in range(HEIGHT):
             t = y / HEIGHT
-            r = int(5 + 7 * (1 - abs(t - 0.5) * 2))
-            g = int(4 + 4 * (1 - abs(t - 0.5) * 2))
-            b = int(13 + 18 * (1 - abs(t - 0.5) * 2))
+            r = int(7 + 9 * t)
+            g = int(9 + 7 * t)
+            b = int(22 + 20 * t)
             draw.line((0, y, WIDTH, y), fill=(r, g, b))
 
-        # Soft purple/blue nebula.
-        glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-        gd = ImageDraw.Draw(glow)
-        gd.ellipse((80, 55, 900, 275), fill=(88, 52, 180, 45))
-        gd.ellipse((250, 25, 760, 250), fill=(55, 65, 190, 30))
-        glow = glow.filter(ImageFilter.GaussianBlur(38))
-        base = Image.alpha_composite(base.convert("RGBA"), glow)
-        draw = ImageDraw.Draw(base)
+        # Moon and tiny pixel stars.
+        draw.ellipse((790, 42, 842, 94), fill=(220, 224, 245))
+        draw.rectangle((807, 49, 820, 58), fill=(195, 199, 222))
+        draw.rectangle((796, 70, 809, 80), fill=(198, 201, 222))
 
-        for x, y, r in stars:
-            alpha = random.choice([45, 60, 80, 105])
-            draw.ellipse((x-r, y-r, x+r, y+r), fill=(205, 196, 255, alpha))
+        random.seed(7000)
+        for _ in range(95):
+            sx = random.randint(12, WIDTH - 12)
+            sy = random.randint(35, 175)
+            size = random.choice([1, 1, 1, 2])
+            draw.rectangle((sx, sy, sx + size, sy + size), fill=(185, 193, 225))
 
-        # Header.
-        draw.text((42, 15), "CONTRIBUTION GALAXY", fill=(245, 243, 255, 255))
+        # Distant city.
+        for x, y, w, h in silhouettes:
+            draw.rectangle((x, y, x + w, base_y), fill=(13, 17, 33))
+            for wy in range(int(y) + 10, base_y - 8, 13):
+                for wx in range(x + 5, x + w - 4, 10):
+                    if (wx + wy + frame_no) % 5 == 0:
+                        draw.rectangle((wx, wy, wx + 3, wy + 4), fill=(108, 92, 150))
+
+        # Ground / street grid.
+        draw.rectangle((0, base_y, WIDTH, HEIGHT), fill=(9, 11, 22))
+        draw.line((0, base_y, WIDTH, base_y), fill=(71, 61, 103), width=2)
+        for y in range(base_y + 18, HEIGHT, 18):
+            draw.line((0, y, WIDTH, y), fill=(18, 21, 38))
+        for x in range(0, WIDTH, 34):
+            draw.line((x, base_y, x - 20, HEIGHT), fill=(16, 19, 34))
+
+        # Real contribution days become pixel buildings.
+        for building in buildings:
+            x, y, w, h = building["x"], building["y"], building["w"], building["h"]
+            level, count, seed = building["level"], building["count"], building["seed"]
+
+            # Building body and roof.
+            body = [(20, 25), (31, 38), (45, 58), (61, 76)][level]
+            roof = [(30, 34), (47, 43), (72, 62), (104, 85)][level]
+            highlight = [(56, 58), (83, 82), (125, 110), (174, 151)][level]
+            draw.rectangle((x, y, x + w, base_y), fill=body)
+            draw.rectangle((x, y, x + w, y + 3), fill=roof)
+            draw.rectangle((x + 2, y + 4, x + 3, base_y - 1), fill=highlight)
+
+            # Windows pulse based on frame, with more activity on stronger days.
+            window_gap = 11
+            for wy in range(int(y) + 10, base_y - 5, window_gap):
+                for wx in range(x + 3, x + w - 1, 5):
+                    lit = ((seed * 13 + wy + wx + frame_no * (level + 1)) % 17) < (3 + level)
+                    if lit:
+                        draw.rectangle((wx, wy, wx + 2, wy + 3), fill=(218, 196, 126))
+
+            # Antenna on high-contribution buildings.
+            if level >= 3:
+                draw.rectangle((x + w // 2, y - 10, x + w // 2 + 1, y), fill=(139, 123, 190))
+                if (frame_no + seed) % 8 < 4:
+                    draw.rectangle((x + w // 2, y - 13, x + w // 2 + 1, y - 12), fill=(220, 205, 255))
+
+        # Animated pixel traffic.
+        for vehicle in vehicles:
+            vx = (vehicle["x"] + frame_no * vehicle["speed"]) % (WIDTH + 30) - 15
+            vy = vehicle["y"]
+            draw.rectangle((vx, vy, vx + 10, vy + 3), fill=(184, 151, 238))
+            draw.rectangle((vx + 2, vy - 2, vx + 6, vy), fill=(111, 96, 150))
+            draw.point((vx + 11, vy + 2), fill=(245, 220, 145))
+
+        # Header and legend.
+        draw.text((34, 17), "PIXEL CONTRIBUTION CITY", fill=(241, 238, 252))
         label = f"{total:,} contributions  ·  LAST 12 MONTHS"
         bbox = draw.textbbox((0, 0), label)
-        draw.text((WIDTH - 42 - (bbox[2] - bbox[0]), 16), label, fill=(161, 161, 170, 255))
+        draw.text((WIDTH - 34 - (bbox[2] - bbox[0]), 18), label, fill=(156, 157, 175))
+        draw.text((34, 325), "EACH BUILDING = AN ACTIVE CONTRIBUTION DAY", fill=(112, 113, 130))
+        draw.text((WIDTH - 230, 325), "LOW  ▪  ▪  ▪  ▪  HIGH", fill=(112, 113, 130))
 
-        # Real contribution days become moving meteors.
-        for item in contributions:
-            x, y = item["x"], item["y"]
-            level, count, seed = item["level"], item["count"], item["seed"]
-            phase = ((frame_no / FRAMES) + ((seed * 0.071) % 1.0)) % 1.0
-            # Fade at the start/end so the meteor appears to shoot through the point.
-            fade = math.sin(math.pi * phase)
-            travel_x = 24 + level * 7
-            travel_y = 13 + level * 5
-            head_x = x + travel_x * phase
-            head_y = y - travel_y * phase
-            size = 2.0 + level * 0.9 + min(count, 25) * 0.055
-            tail = 10 + level * 6 + min(count, 20) * 0.12
-
-            # Layered tail for a cinematic glow.
-            layer = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-            ld = ImageDraw.Draw(layer)
-            tx = head_x - tail
-            ty = head_y + tail * 0.52
-            ld.line((tx, ty, head_x, head_y), fill=(167, 139, 250, int(80 * fade)), width=max(2, int(size)))
-            layer = layer.filter(ImageFilter.GaussianBlur(3))
-            base = Image.alpha_composite(base, layer)
-            draw = ImageDraw.Draw(base)
-
-            draw.line((tx, ty, head_x, head_y), fill=(221, 214, 254, int(165 * fade)), width=max(1, int(size * 0.65)))
-            rr = max(1.2, size * (0.72 + 0.55 * fade))
-            a = int(120 + 135 * fade)
-            draw.ellipse((head_x-rr, head_y-rr, head_x+rr, head_y+rr), fill=(255, 255, 255, a))
-
-        # A few independent long cinematic shooting stars.
-        for meteor in range(8):
-            sx = 80 + meteor * 120
-            sy = 65 + (meteor * 41) % 145
-            phase = ((frame_no / FRAMES) + meteor * 0.17) % 1.0
-            mx = sx + 70 * phase
-            my = sy - 38 * phase
-            tail = 38
-            draw.line((mx-tail, my+tail*0.55, mx, my), fill=(196, 181, 253, int(150 * math.sin(math.pi*phase))), width=2)
-            draw.ellipse((mx-2, my-2, mx+2, my+2), fill=(255, 255, 255, 210))
-
-        footer = "EACH METEOR REPRESENTS A DAY OF ACTIVITY"
-        bbox = draw.textbbox((0, 0), footer)
-        draw.text(((WIDTH - (bbox[2]-bbox[0]))/2, 282), footer, fill=(113, 113, 122, 255))
-
-        frames.append(base.convert("RGB"))
+        frames.append(img)
 
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
     frames[0].save(
