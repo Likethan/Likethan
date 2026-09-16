@@ -15,7 +15,6 @@ by_date = {item["date"]: item for item in contributions}
 
 end = date.today()
 start = end - timedelta(days=364)
-# Start on Sunday so the grid is a clean 7-row calendar.
 start -= timedelta(days=(start.weekday() + 1) % 7)
 
 days = []
@@ -35,15 +34,15 @@ height = 360
 palette = ["#11131a", "#24124d", "#47228a", "#7041cf", "#b88cff"]
 svg = [
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-    '<title id="title">Likethan — Breathing GitHub Contribution Heatmap</title>',
-    '<desc id="desc">A real GitHub contribution calendar generated from the latest public contribution data. Cells breathe according to contribution intensity.</desc>',
+    '<title id="title">Likethan — Morphing GitHub Contribution Heatmap</title>',
+    '<desc id="desc">A real GitHub contribution calendar generated from the latest public contribution data. Active cells breathe and morph between rounded shapes according to contribution intensity.</desc>',
     '<defs>',
     '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030406"/><stop offset=".55" stop-color="#090b12"/><stop offset="1" stop-color="#11131b"/></linearGradient>',
     '<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
     '</defs>',
     f'<rect width="{width}" height="{height}" rx="24" fill="url(#bg)"/>',
     f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="23" fill="none" stroke="#fff" stroke-opacity=".08"/>',
-    '<text x="28" y="32" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="2.8">BREATHING HEATMAP</text>',
+    '<text x="28" y="32" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="2.8">MORPHING HEATMAP</text>',
     f'<text x="{width-28}" y="32" text-anchor="end" fill="#737985" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" letter-spacing="1.7">GITHUB ACTIVITY • {end.isoformat()}</text>',
     f'<g transform="translate({left} {top})">'
 ]
@@ -60,17 +59,23 @@ for i, d in enumerate(days):
     if level == 0:
         svg.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4" fill="{fill}"/>')
     else:
-        duration = max(1.8, 4.8 - level * 0.65)
+        duration = max(1.8, 5.4 - level * 0.65)
         delay = -((col * 0.17 + row * 0.31) % duration)
+        morph = 2.6 + level * 0.18
         svg.append(
             f'<g filter="url(#glow)">'
             f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4" fill="{fill}">'
             f'<title>{d.isoformat()} — {count} contribution{"s" if count != 1 else ""}</title>'
-            f'<animate attributeName="opacity" values=".72;1;.72" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="opacity" values=".70;1;.70" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="x" values="{x};{x-2};{x+1};{x}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="y" values="{y};{y+1};{y-2};{y}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="width" values="{cell};{cell+4};{cell-2};{cell}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="height" values="{cell};{cell-2};{cell+4};{cell}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="rx" values="4;10;6;4" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
             f'</rect>'
             f'<rect x="{x-2}" y="{y-2}" width="{cell+4}" height="{cell+4}" rx="6" fill="none" stroke="#b88cff" stroke-opacity="0">'
-            f'<animate attributeName="stroke-opacity" values="0;.32;0" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="rx" values="6;9;6" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="stroke-opacity" values="0;.34;0" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="rx" values="6;12;6" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
             f'</rect></g>'
         )
 
@@ -91,4 +96,4 @@ svg += [
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text("".join(svg), encoding="utf-8")
-print(f"Generated {OUT} from {len(contributions)} GitHub contribution records.")
+print(f"Generated {OUT} from {len(contributions)} GitHub contribution records with morphing cells.")
