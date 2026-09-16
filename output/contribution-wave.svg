@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="title desc">
 <title id="title">Likethan's Wave Ripple GitHub Contribution Graph</title>
-<desc id="desc">An animated contribution grid with a traveling wave and expanding ripple effect.</desc>
+<desc id="desc">Animated contribution grid with a visible traveling wave and ripple effect.</desc>
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07080b"/><stop offset="1" stop-color="#10131a"/></linearGradient>
   <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset=".5" stop-color="#8be9ff"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></linearGradient>
@@ -11,53 +11,39 @@
 <rect width="1200" height="220" rx="18" fill="url(#bg)"/>
 <rect x="1" y="1" width="1198" height="218" rx="17" fill="none" stroke="#fff" stroke-opacity=".08"/>
 <text x="28" y="27" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">CONTRIBUTION RIPPLE</text>
-<text x="1172" y="27" text-anchor="end" fill="#7d8590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9" letter-spacing="1.5">WAVE / INTERACTION / FLOW</text>
-
+<text x="1172" y="27" text-anchor="end" fill="#7d8590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9" letter-spacing="1.5">WAVE / RIPPLE / FLOW</text>
 <g clip-path="url(#clip)">
   <rect x="28" y="48" width="1144" height="126" fill="url(#grid)"/>
-
-  <!-- Moving wave front -->
-  <g filter="url(#glow)" opacity=".8">
-    <rect x="-90" y="35" width="90" height="150" fill="url(#wave)" transform="skewX(-12)">
-      <animate attributeName="x" from="-120" to="1210" dur="5.5s" repeatCount="indefinite"/>
+  <!-- Strong moving wave front -->
+  <g filter="url(#glow)">
+    <rect x="-100" y="38" width="120" height="146" fill="url(#wave)" opacity=".85" transform="skewX(-12)">
+      <animate attributeName="x" from="-140" to="1220" dur="4.8s" repeatCount="indefinite"/>
     </rect>
   </g>
-
-  <!-- Highlight bands travel through the contribution cells -->
-  <g fill="#8be9ff" filter="url(#glow)">
-    <g opacity=".0">
-      <rect x="70" y="69" width="15" height="15" rx="3"/><rect x="91" y="90" width="15" height="15" rx="3"/><rect x="112" y="111" width="15" height="15" rx="3"/><rect x="133" y="132" width="15" height="15" rx="3"/>
-      <animateTransform attributeName="transform" type="translate" from="-170 0" to="1000 0" dur="5.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;.85;0" dur="5.5s" repeatCount="indefinite"/>
-    </g>
-  </g>
-
-  <!-- Expanding ripple rings -->
-  <g fill="none" stroke="#8be9ff" stroke-width="1.2" opacity="0">
-    <circle cx="120" cy="111" r="12">
-      <animate attributeName="cx" values="120;1080;120" dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="12;90;12" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values=".75;0;.75" dur="2.2s" repeatCount="indefinite"/>
+  <!-- Bright ripple pulses -->
+  <g fill="none" stroke="#8be9ff" stroke-width="2" filter="url(#glow)">
+    <circle cx="100" cy="111" r="10" opacity=".7">
+      <animate attributeName="cx" values="100;1100;100" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="10;70;10" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".8;0;.8" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="120" cy="111" r="12">
-      <animate attributeName="cx" values="120;1080;120" dur="7s" begin=".7s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="12;90;12" dur="2.2s" begin=".7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values=".55;0;.55" dur="2.2s" begin=".7s" repeatCount="indefinite"/>
+    <circle cx="100" cy="111" r="10" opacity=".55">
+      <animate attributeName="cx" values="100;1100;100" dur="6s" begin=".65s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="10;70;10" dur="2s" begin=".65s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".6;0;.6" dur="2s" begin=".65s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="120" cy="111" r="12">
-      <animate attributeName="cx" values="120;1080;120" dur="7s" begin="1.4s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="12;90;12" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values=".35;0;.35" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
+    <circle cx="100" cy="111" r="10" opacity=".4">
+      <animate attributeName="cx" values="100;1100;100" dur="6s" begin="1.3s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="10;70;10" dur="2s" begin="1.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".45;0;.45" dur="2s" begin="1.3s" repeatCount="indefinite"/>
     </circle>
   </g>
-
-  <!-- Organic sine wave crossing the graph -->
-  <path d="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112" fill="none" stroke="#8be9ff" stroke-width="1.5" stroke-opacity=".28">
-    <animate attributeName="d" dur="3.8s" repeatCount="indefinite" values="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112;M0 112 C120 159 200 65 320 112 S520 159 640 112 S840 65 960 112 S1080 159 1200 112;M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112"/>
+  <!-- Traveling sine wave -->
+  <path d="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112" fill="none" stroke="#8be9ff" stroke-width="2" stroke-opacity=".55" filter="url(#glow)">
+    <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112;M0 112 C120 159 200 65 320 112 S520 159 640 112 S840 65 960 112 S1080 159 1200 112;M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112"/>
   </path>
 </g>
-
 <text x="28" y="199" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">LOW ACTIVITY</text>
-<text x="600" y="199" text-anchor="middle" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">ACTIVITY FLOWS THROUGH THE GRID AS A TRAVELING RIPPLE</text>
+<text x="600" y="199" text-anchor="middle" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">WAVE PULSE • RIPPLE • CONTRIBUTION FLOW</text>
 <text x="1172" y="199" text-anchor="end" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">HIGH ACTIVITY</text>
 </svg>
