@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Likethan — Contribution Perspective</title>
+<style>
+:root{--bg:#050507;--fg:#f5f5f5;--muted:#8b8b95;--accent:#7c3aed;--cell:clamp(8px,1.15vw,15px);--gap:clamp(3px,.42vw,6px)}
+*{box-sizing:border-box}html{background:var(--bg);color:var(--fg);scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 20%,#171020 0,#08080b 38%,#050507 72%);min-height:360vh;overflow-x:hidden}.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:10}.hud{position:fixed;z-index:20;top:28px;left:28px;right:28px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#aaaab4}.year{font-size:12px;color:#d8d8df;border:1px solid #292932;padding:8px 12px;border-radius:999px;background:#09090dcc;backdrop-filter:blur(12px)}main{height:100vh;position:sticky;top:0;display:grid;place-items:center;overflow:hidden}.scene{width:min(1120px,94vw);height:min(650px,78vh);position:relative;display:grid;place-items:center;perspective:1300px}.grid{position:absolute;width:min(1020px,92vw);height:min(560px,64vh);display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,var(--cell));grid-auto-columns:var(--cell);gap:var(--gap);transform-style:preserve-3d;transform:rotateX(62deg) rotateZ(-8deg) translateY(100px) scale(1.15);transition:transform .08s linear;will-change:transform}.cell{width:var(--cell);height:var(--cell);border-radius:2px;background:#111116;box-shadow:inset 0 0 0 1px #ffffff05;transform-style:preserve-3d;transition:background .2s,box-shadow .2s}.cell[data-level="1"]{background:#26144a}.cell[data-level="2"]{background:#452079}.cell[data-level="3"]{background:#6933ad}.cell[data-level="4"]{background:#9b5de5;box-shadow:0 0 14px #9b5de544}.cell.hot{animation:pulse 2.8s ease-in-out infinite}.cell::after{content:"";position:absolute;inset:0;border-radius:inherit;background:inherit;transform:translateZ(var(--z,0px));filter:brightness(1.15);opacity:.7}.title{position:relative;z-index:4;text-align:center;mix-blend-mode:screen;transform:translateY(var(--titleY,0px));pointer-events:none}.title small{display:block;color:#aaaab4;font-size:11px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px}.title h1{font-size:clamp(42px,8vw,100px);line-height:.88;letter-spacing:-.07em;margin:0;font-weight:700}.title p{margin:20px 0 0;color:#a9a9b4;font-size:14px}.stats{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:24px;color:#9d9da8;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.stats b{color:#fff;font-size:13px;margin-right:5px}.scroll{position:fixed;z-index:20;bottom:28px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#6e6e78;animation:breathe 2s ease-in-out infinite}.vignette{position:fixed;inset:0;z-index:8;pointer-events:none;background:radial-gradient(circle,transparent 35%,#050507aa 100%)}@keyframes pulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}@keyframes breathe{50%{opacity:.35;transform:translateX(-50%) translateY(5px)}}@media(max-width:700px){body{min-height:280vh}.grid{gap:3px;transform:rotateX(67deg) rotateZ(-7deg) translateY(100px) scale(.8)}.title h1{font-size:48px}.stats{bottom:25px;gap:10px}.hud{top:18px;left:18px;right:18px}}
+</style>
+</head>
+<body>
+<div class="noise"></div><div class="vignette"></div>
+<header class="hud"><div class="eyebrow">LIKETHAN / CONTRIBUTION FIELD</div><div class="year" id="year">LOADING</div></header>
+<main><section class="scene"><div class="grid" id="grid" aria-label="GitHub contribution graph"></div><div class="title"><small>scroll to navigate</small><h1>BUILD<br>IN MOTION.</h1><p>Real GitHub contribution data · rendered as a 3D perspective field</p></div><div class="stats"><span><b id="total">—</b> contributions</span><span><b id="days">—</b> active days</span></div></section></main>
+<div class="scroll">↓ scroll</div>
+<script>
+const USER='Likethan';
+const API=`https://github-contributions-api.jogruber.de/v4/${USER}?y=last`;
+const grid=document.getElementById('grid');
+const yearEl=document.getElementById('year');
+const totalEl=document.getElementById('total');
+const daysEl=document.getElementById('days');
+const title=document.querySelector('.title');
+let cells=[];
+function level(c){return Math.max(0,Math.min(4,Number(c.level)||0))}
+function build(data){
+ const items=(data.contributions||[]).filter(x=>new Date(x.date)<=new Date());
+ const byDate=new Map(items.map(x=>[x.date,x]));
+ const end=new Date(); end.setHours(0,0,0,0);
+ const start=new Date(end); start.setDate(start.getDate()-364);
+ const startDay=start.getDay(); start.setDate(start.getDate()-startDay);
+ for(let i=0;i<371;i++){
+   const d=new Date(start);d.setDate(start.getDate()+i);
+   const key=d.toISOString().slice(0,10);const c=byDate.get(key)||{count:0,level:0,date:key};
+   const el=document.createElement('div');el.className='cell';el.dataset.level=level(c);el.dataset.count=c.count;el.dataset.date=key;el.title=`${key} · ${c.count} contributions`;grid.appendChild(el);cells.push(el);
+ }
+ const total=items.reduce((s,x)=>s+(Number(x.count)||0),0);totalEl.textContent=total.toLocaleString();daysEl.textContent=items.filter(x=>Number(x.count)>0).length.toLocaleString();yearEl.textContent=new Date().getFullYear();
+ cells.forEach((el,i)=>{if(Number(el.dataset.count)>0 && i%11===0)el.classList.add('hot')});
+}
+function animate(){
+ const max=Math.max(0,document.documentElement.scrollHeight-innerHeight);const p=max?scrollY/max:0;
+ const rx=62-p*25;const rz=-8+p*16;const ty=100-p*230;const scale=1.15-p*.12;
+ grid.style.transform=`rotateX(${rx}deg) rotateZ(${rz}deg) translateY(${ty}px) scale(${scale})`;
+ title.style.setProperty('--titleY',`${p*-180}px`);
+ const depth=Math.round(p*90);cells.forEach((el,i)=>{if(Number(el.dataset.level)>0)el.style.setProperty('--z',`${depth*(Number(el.dataset.level)/4)}px`)});
+ requestAnimationFrame(animate);
+}
+fetch(API).then(r=>{if(!r.ok)throw new Error('Contribution API unavailable');return r.json()}).then(build).catch(()=>{yearEl.textContent='OFFLINE';title.querySelector('p').textContent='Contribution data could not be loaded right now.'});
+animate();
+</script>
+</body>
+</html>
