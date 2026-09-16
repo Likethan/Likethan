@@ -2,8 +2,11 @@ from __future__ import annotations
 
 import datetime as dt
 import html
+import json
 import math
-import subprocess
+import os
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 DAYS = 90
@@ -17,17 +20,53 @@ GRAPH_W = WIDTH - LEFT - RIGHT
 GRAPH_H = HEIGHT - TOP - BOTTOM
 
 
-def git_commit_counts() -> list[int]:
-    since = (dt.date.today() - dt.timedelta(days=DAYS - 1)).isoformat()
-    result = subprocess.run(
-        ["git", "log", "--all", "--since", since, "--pretty=%ad", "--date=short"],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    counts = {dt.date.fromisoformat(line.strip()): 0 for line in result.stdout.splitlines() if line.strip()}
+def github_commit_counts() -> list[int]:
+    """Count Likethan-authored commits on main for the last 90 days."""
+    repo = os.environ.get("GITHUB_REPOSITORY", "Likethan/Likethan")
+    token = os.environ.get("GITHUB_TOKEN", "")
     start = dt.date.today() - dt.timedelta(days=DAYS - 1)
-    return [counts.get(start + dt.timedelta(days=i), 0) for i in range(DAYS)]
+    since = f"{start.isoformat()}T00:00:00Z"
+    until = f"{(dt.date.today() + dt.timedelta(days=1)).isoformat()}T00:00:00Z"
+    counts = {start + dt.timedelta(days=i): 0 for i in range(DAYS)}
+
+    for page in range(1, 6):
+        query = urllib.parse.urlencode(
+            {
+                "sha": "main",
+                "author": "Likethan",
+                "since": since,
+                "until": until,
+                "per_page": 100,
+                "page": page,
+            }
+        )
+        request = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/commits?{query}",
+            headers={
+                "Accept": "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2026-03-10",
+                **({"Authorization": f"Bearer {token}"} if token else {}),
+                "User-Agent": "Likethan-contribution-wave",
+            },
+        )
+        with urllib.request.urlopen(request, timeout=20) as response:
+            commits = json.load(response)
+
+        if not commits:
+            break
+
+        for commit in commits:
+            date_text = commit.get("commit", {}).get("author", {}).get("date", "")
+            if not date_text:
+                continue
+            day = dt.date.fromisoformat(date_text[:10])
+            if day in counts:
+                counts[day] += 1
+
+        if len(commits) < 100:
+            break
+
+    return [counts[start + dt.timedelta(days=i)] for i in range(DAYS)]
 
 
 def smooth_points(values: list[int]) -> list[tuple[float, float]]:
@@ -35,7 +74,6 @@ def smooth_points(values: list[int]) -> list[tuple[float, float]]:
     points = []
     for i, value in enumerate(values):
         x = LEFT + (GRAPH_W * i / (len(values) - 1))
-        # Keep the wave readable even on quiet days while preserving relative intensity.
         normalized = value / peak
         y = TOP + GRAPH_H * (0.88 - 0.70 * math.sqrt(normalized))
         points.append((x, y))
@@ -55,7 +93,7 @@ def path_d(points: list[tuple[float, float]]) -> str:
 
 
 def main() -> None:
-    values = git_commit_counts()
+    values = github_commit_counts()
     points = smooth_points(values)
     wave = path_d(points)
     max_value = max(values) if values else 0
@@ -68,12 +106,9 @@ def main() -> None:
         opacity = 0.35 + (0.65 * value / max_value if max_value else 0)
         delay = i * 0.035
         dots.append(
-            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius:.1f}" '
-            f'fill="url(#dot)" opacity="{opacity:.2f}">' 
-            f'<animate attributeName="r" values="{radius:.1f};{radius + 2.8:.1f};{radius:.1f}" '
-            f'dur="2.4s" begin="-{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="opacity" values="{opacity:.2f};1;{opacity:.2f}" '
-            f'dur="2.4s" begin="-{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{radius:.1f}" fill="url(#dot)" opacity="{opacity:.2f}">'
+            f'<animate attributeName="r" values="{radius:.1f};{radius + 2.8:.1f};{radius:.1f}" dur="2.4s" begin="-{delay:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="opacity" values="{opacity:.2f};1;{opacity:.2f}" dur="2.4s" begin="-{delay:.2f}s" repeatCount="indefinite"/>'
             f'</circle>'
         )
 
@@ -81,13 +116,12 @@ def main() -> None:
     for index in [0, 29, 59, 89]:
         date = today - dt.timedelta(days=DAYS - 1 - index)
         labels.append(
-            f'<text x="{points[index][0]:.1f}" y="{HEIGHT - 16}" class="label" text-anchor="middle">'
-            f'{html.escape(date.strftime("%b %d"))}</text>'
+            f'<text x="{points[index][0]:.1f}" y="{HEIGHT - 16}" fill="#64748B" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" text-anchor="middle">{html.escape(date.strftime("%b %d"))}</text>'
         )
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">
   <title id="title">Likethan's animated GitHub contribution wave</title>
-  <desc id="desc">An animated 90-day contribution wave showing {total} commits in the current repository history.</desc>
+  <desc id="desc">An animated 90-day contribution wave showing {total} commits authored by Likethan.</desc>
   <defs>
     <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
       <stop offset="0%" stop-color="#6E56CF"/>
@@ -127,8 +161,8 @@ def main() -> None:
     {''.join(dots)}
   </g>
   {''.join(labels)}
-  <text x="28" y="{HEIGHT - 16}" class="label" fill="#64748B" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10">LOW</text>
-  <text x="{WIDTH - 28}" y="{HEIGHT - 16}" class="label" text-anchor="end" fill="#64748B" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10">HIGH ACTIVITY</text>
+  <text x="28" y="{HEIGHT - 16}" fill="#64748B" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10">LOW</text>
+  <text x="{WIDTH - 28}" y="{HEIGHT - 16}" fill="#64748B" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" text-anchor="end">HIGH ACTIVITY</text>
 </svg>
 '''
 
