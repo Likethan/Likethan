@@ -1,4 +1,5 @@
 import json
+import math
 import urllib.request
 from datetime import date, timedelta
 from pathlib import Path
@@ -7,6 +8,7 @@ USERNAME = "Likethan"
 API = f"https://github-contributions-api.jogruber.de/v4/{USERNAME}?y=last"
 OUT = Path("output/contribution-wave.svg")
 
+# Real GitHub contribution data is fetched at generation time.
 with urllib.request.urlopen(API, timeout=30) as response:
     payload = json.load(response)
 
@@ -32,21 +34,25 @@ width = left * 2 + weeks * (cell + gap) - gap
 height = 360
 
 palette = ["#11131a", "#24124d", "#47228a", "#7041cf", "#b88cff"]
+
 svg = [
     f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-    '<title id="title">Likethan — Morphing GitHub Contribution Heatmap</title>',
-    '<desc id="desc">A real GitHub contribution calendar generated from the latest public contribution data. Active cells breathe and morph between rounded shapes according to contribution intensity.</desc>',
+    '<title id="title">Likethan — Flow Field GitHub Contribution Heatmap</title>',
+    '<desc id="desc">A real GitHub contribution calendar rendered as a continuously moving flow field. Contribution intensity controls particle density, movement and glow.</desc>',
     '<defs>',
     '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030406"/><stop offset=".55" stop-color="#090b12"/><stop offset="1" stop-color="#11131b"/></linearGradient>',
-    '<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
+    '<filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
+    '<filter id="strongGlow" x="-200%" y="-200%" width="400%" height="400%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>',
     '</defs>',
     f'<rect width="{width}" height="{height}" rx="24" fill="url(#bg)"/>',
     f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="23" fill="none" stroke="#fff" stroke-opacity=".08"/>',
-    '<text x="28" y="32" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="2.8">MORPHING HEATMAP</text>',
+    '<text x="28" y="32" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" letter-spacing="2.8">FLOW FIELD</text>',
     f'<text x="{width-28}" y="32" text-anchor="end" fill="#737985" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10" letter-spacing="1.7">GITHUB ACTIVITY • {end.isoformat()}</text>',
     f'<g transform="translate({left} {top})">'
 ]
 
+# Base contribution cells remain the tracking layer.
+# Animated field lines and particles are derived from each cell's real intensity.
 for i, d in enumerate(days):
     item = by_date.get(d.isoformat(), {})
     count = int(item.get("count", 0))
@@ -56,28 +62,63 @@ for i, d in enumerate(days):
     x = col * (cell + gap)
     y = row * (cell + gap)
     fill = palette[max(0, min(4, level))]
+
     if level == 0:
         svg.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4" fill="{fill}"/>')
-    else:
-        duration = max(1.8, 5.4 - level * 0.65)
-        delay = -((col * 0.17 + row * 0.31) % duration)
-        morph = 2.6 + level * 0.18
-        svg.append(
-            f'<g filter="url(#glow)">'
-            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4" fill="{fill}">'
-            f'<title>{d.isoformat()} — {count} contribution{"s" if count != 1 else ""}</title>'
-            f'<animate attributeName="opacity" values=".70;1;.70" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="x" values="{x};{x-2};{x+1};{x}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="y" values="{y};{y+1};{y-2};{y}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="width" values="{cell};{cell+4};{cell-2};{cell}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="height" values="{cell};{cell-2};{cell+4};{cell}" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="rx" values="4;10;6;4" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'</rect>'
-            f'<rect x="{x-2}" y="{y-2}" width="{cell+4}" height="{cell+4}" rx="6" fill="none" stroke="#b88cff" stroke-opacity="0">'
-            f'<animate attributeName="stroke-opacity" values="0;.34;0" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="rx" values="6;12;6" dur="{morph:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
-            f'</rect></g>'
-        )
+        continue
+
+    # A deterministic local vector field. The phase differs per cell so the
+    # animation travels as a coherent current instead of flashing in unison.
+    phase = (col * 0.42 + row * 0.71) % (math.pi * 2)
+    duration = max(2.8, 7.0 - level * 0.7)
+    delay = -((col * 0.23 + row * 0.37) % duration)
+    travel = 5 + level * 1.8
+    particle_r = 1.1 + level * 0.35
+    opacity = 0.38 + level * 0.12
+
+    svg.append(f'<g filter="url(#softGlow)">')
+    svg.append(
+        f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4" fill="{fill}">'
+        f'<title>{d.isoformat()} — {count} contribution{"s" if count != 1 else ""}</title>'
+        f'<animate attributeName="opacity" values=".58;{min(1, opacity + 0.25):.2f};.58" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="rx" values="4;7;5;4" dur="{duration * 1.15:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+        f'</rect>'
+    )
+
+    # Curved current crossing the cell.
+    c1x = x + cell * 0.15
+    c1y = y + cell * (0.75 - 0.10 * math.sin(phase))
+    c2x = x + cell * 0.72
+    c2y = y + cell * (0.20 + 0.12 * math.cos(phase))
+    path = f'M {x-3} {y+cell*0.62:.2f} C {c1x:.2f} {c1y:.2f}, {c2x:.2f} {c2y:.2f}, {x+cell+3} {y+cell*0.38:.2f}'
+    svg.append(
+        f'<path d="{path}" fill="none" stroke="#d5b8ff" stroke-opacity=".24" stroke-width="{0.7 + level*0.18:.2f}" stroke-linecap="round" stroke-dasharray="{travel:.1f} {travel*1.7:.1f}">'
+        f'<animate attributeName="stroke-dashoffset" from="0" to="-{travel*2.7:.1f}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+        f'</path>'
+    )
+
+    # A bright particle rides the current and loops through the cell.
+    svg.append(
+        f'<circle cx="{x + cell*0.18:.2f}" cy="{y + cell*0.62:.2f}" r="{particle_r:.2f}" fill="#e9dcff" opacity=".0">'
+        f'<animate attributeName="cx" values="{x + cell*0.15:.2f};{x + cell*0.50:.2f};{x + cell*0.88:.2f};{x + cell*0.15:.2f}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="cy" values="{y + cell*0.62:.2f};{y + cell*0.46:.2f};{y + cell*0.38:.2f};{y + cell*0.62:.2f}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="opacity" values="0;{min(1, 0.55 + level*0.1):.2f};0" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
+        f'</circle>'
+    )
+    svg.append('</g>')
+
+# Add a sparse secondary current over the entire grid for a true field effect.
+field_y = (weeks * (cell + gap)) * 0.38
+for lane in range(5):
+    y0 = 24 + lane * 31
+    amp = 7 + lane * 1.4
+    path = f'M -20 {y0} C {width*0.25:.1f} {y0-amp:.1f}, {width*0.48:.1f} {y0+amp:.1f}, {width*0.72:.1f} {y0} S {width+10:.1f} {y0-amp:.1f}, {width+20:.1f} {y0+amp/2:.1f}'
+    dur = 12 + lane * 1.7
+    svg.append(
+        f'<path d="{path}" fill="none" stroke="#9c6cff" stroke-opacity=".055" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 18">'
+        f'<animate attributeName="stroke-dashoffset" from="0" to="-200" dur="{dur:.1f}s" repeatCount="indefinite"/>'
+        f'</path>'
+    )
 
 svg += [
     '</g>',
@@ -96,4 +137,4 @@ svg += [
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text("".join(svg), encoding="utf-8")
-print(f"Generated {OUT} from {len(contributions)} GitHub contribution records with morphing cells.")
+print(f"Generated {OUT} from {len(contributions)} GitHub contribution records with flow-field animation.")
