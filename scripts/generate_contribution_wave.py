@@ -21,7 +21,7 @@ GRAPH_H = HEIGHT - TOP - BOTTOM
 
 
 def github_commit_counts() -> list[int]:
-    """Count Likethan-authored commits on main for the last 90 days."""
+    """Count commits on main for the last 90 days."""
     repo = os.environ.get("GITHUB_REPOSITORY", "Likethan/Likethan")
     token = os.environ.get("GITHUB_TOKEN", "")
     start = dt.date.today() - dt.timedelta(days=DAYS - 1)
@@ -33,7 +33,6 @@ def github_commit_counts() -> list[int]:
         query = urllib.parse.urlencode(
             {
                 "sha": "main",
-                "author": "Likethan",
                 "since": since,
                 "until": until,
                 "per_page": 100,
@@ -81,8 +80,6 @@ def smooth_points(values: list[int]) -> list[tuple[float, float]]:
 
 
 def path_d(points: list[tuple[float, float]]) -> str:
-    if not points:
-        return ""
     commands = [f"M {points[0][0]:.1f} {points[0][1]:.1f}"]
     for i in range(1, len(points)):
         x0, y0 = points[i - 1]
@@ -121,43 +118,23 @@ def main() -> None:
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title desc">
   <title id="title">Likethan's animated GitHub contribution wave</title>
-  <desc id="desc">An animated 90-day contribution wave showing {total} commits authored by Likethan.</desc>
+  <desc id="desc">An animated 90-day contribution wave showing {total} commits in the repository.</desc>
   <defs>
-    <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0%" stop-color="#6E56CF"/>
-      <stop offset="52%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#38BDF8"/>
-    </linearGradient>
-    <linearGradient id="fill" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.28"/>
-      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="dot">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="30%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#38BDF8"/>
-    </radialGradient>
-    <filter id="glow" x="-30%" y="-100%" width="160%" height="300%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#6E56CF"/><stop offset="52%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#38BDF8"/></linearGradient>
+    <linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.28"/><stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/></linearGradient>
+    <radialGradient id="dot"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="30%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#38BDF8"/></radialGradient>
+    <filter id="glow" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <clipPath id="clip"><rect x="{LEFT}" y="{TOP}" width="{GRAPH_W}" height="{GRAPH_H}" rx="14"/></clipPath>
   </defs>
   <rect width="100%" height="100%" rx="22" fill="#0B0D12"/>
   <rect x="1" y="1" width="{WIDTH - 2}" height="{HEIGHT - 2}" rx="21" fill="none" stroke="#202532"/>
   <text x="28" y="30" fill="#F8FAFC" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700">CONTRIBUTION WAVE</text>
   <text x="{WIDTH - 28}" y="30" fill="#94A3B8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" text-anchor="end">90 DAYS · {total} COMMITS</text>
-  <g opacity="0.22" stroke="#64748B" stroke-width="1">
-    <line x1="{LEFT}" y1="{TOP + GRAPH_H * .18:.1f}" x2="{WIDTH - RIGHT}" y2="{TOP + GRAPH_H * .18:.1f}"/>
-    <line x1="{LEFT}" y1="{TOP + GRAPH_H * .50:.1f}" x2="{WIDTH - RIGHT}" y2="{TOP + GRAPH_H * .50:.1f}"/>
-    <line x1="{LEFT}" y1="{TOP + GRAPH_H * .82:.1f}" x2="{WIDTH - RIGHT}" y2="{TOP + GRAPH_H * .82:.1f}"/>
-  </g>
+  <g opacity="0.22" stroke="#64748B" stroke-width="1"><line x1="{LEFT}" y1="{TOP + GRAPH_H * .18:.1f}" x2="{WIDTH - RIGHT}" y2="{TOP + GRAPH_H * .18:.1f}"/><line x1="{LEFT}" y1="{TOP + GRAPH_H * .50:.1f}" x2="{WIDTH - RIGHT}" y2="{TOP + GRAPH_H * .50:.1f}"/><line x1="{LEFT}" y1="{TOP + GRAPH_H * .82:.1f}" x2="{WIDTH - RIGHT}" y2="{TOP + GRAPH_H * .82:.1f}"/></g>
   <g clip-path="url(#clip)">
     <path d="{wave} L {points[-1][0]:.1f} {TOP + GRAPH_H:.1f} L {points[0][0]:.1f} {TOP + GRAPH_H:.1f} Z" fill="url(#fill)"/>
     <path d="{wave}" fill="none" stroke="#7C5CFF" stroke-width="8" opacity="0.18" filter="url(#glow)"/>
-    <path d="{wave}" fill="none" stroke="url(#line)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1400" stroke-dashoffset="1400">
-      <animate attributeName="stroke-dashoffset" from="1400" to="0" dur="2.8s" fill="freeze"/>
-    </path>
+    <path d="{wave}" fill="none" stroke="url(#line)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1400" stroke-dashoffset="1400"><animate attributeName="stroke-dashoffset" from="1400" to="0" dur="2.8s" fill="freeze"/></path>
     {''.join(dots)}
   </g>
   {''.join(labels)}
