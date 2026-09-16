@@ -229,7 +229,7 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 ## 📊 GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=0d1117&color=ffffff&line=6E56CF&point=ffffff&area=true&hide_border=true" width="98%" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/main/output/contribution-wave.svg" width="98%" />
 </p>
 
 <p align="center">
