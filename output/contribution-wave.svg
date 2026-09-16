@@ -1,49 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="title desc">
-<title id="title">Likethan's Wave Ripple GitHub Contribution Graph</title>
-<desc id="desc">Animated contribution grid with a visible traveling wave and ripple effect.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">Likethan's 3D Elevation Terrain GitHub Contribution Graph</title>
+<desc id="desc">A perspective terrain visualization where contribution activity rises into animated 3D elevation peaks.</desc>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07080b"/><stop offset="1" stop-color="#10131a"/></linearGradient>
-  <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset=".5" stop-color="#8be9ff"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></linearGradient>
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <pattern id="grid" width="21" height="21" patternUnits="userSpaceOnUse"><rect width="15" height="15" rx="3" fill="#171a20"/><rect width="15" height="15" rx="3" fill="none" stroke="#fff" stroke-opacity=".035"/></pattern>
-  <clipPath id="clip"><rect x="28" y="48" width="1144" height="126" rx="12"/></clipPath>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06070a"/><stop offset="1" stop-color="#11151d"/></linearGradient>
+  <linearGradient id="terrain" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9bf6ff"/><stop offset=".45" stop-color="#6366f1"/><stop offset="1" stop-color="#171a24"/></linearGradient>
+  <linearGradient id="ridge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset=".5" stop-color="#a5f3fc"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="clip"><rect x="25" y="48" width="1150" height="202" rx="14"/></clipPath>
 </defs>
-<rect width="1200" height="220" rx="18" fill="url(#bg)"/>
-<rect x="1" y="1" width="1198" height="218" rx="17" fill="none" stroke="#fff" stroke-opacity=".08"/>
-<text x="28" y="27" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">CONTRIBUTION RIPPLE</text>
-<text x="1172" y="27" text-anchor="end" fill="#7d8590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9" letter-spacing="1.5">WAVE / RIPPLE / FLOW</text>
+<rect width="1200" height="300" rx="20" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="298" rx="19" fill="none" stroke="#fff" stroke-opacity=".08"/>
+<text x="28" y="28" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">CONTRIBUTION TERRAIN</text>
+<text x="1172" y="28" text-anchor="end" fill="#7d8590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9" letter-spacing="1.5">3D ELEVATION / TERRAIN / ACTIVITY</text>
+
 <g clip-path="url(#clip)">
-  <rect x="28" y="48" width="1144" height="126" fill="url(#grid)"/>
-  <!-- Strong moving wave front -->
-  <g filter="url(#glow)">
-    <rect x="-100" y="38" width="120" height="146" fill="url(#wave)" opacity=".85" transform="skewX(-12)">
-      <animate attributeName="x" from="-140" to="1220" dur="4.8s" repeatCount="indefinite"/>
-    </rect>
+  <!-- Perspective floor -->
+  <path d="M25 238 L1175 238 L1175 250 L25 250 Z" fill="#0c1016"/>
+  <g stroke="#64748b" stroke-opacity=".13" stroke-width="1">
+    <path d="M25 238 H1175"/><path d="M25 218 H1175"/><path d="M25 198 H1175"/><path d="M25 178 H1175"/><path d="M25 158 H1175"/><path d="M25 138 H1175"/>
+    <path d="M55 135 L170 250"/><path d="M145 135 L250 250"/><path d="M235 135 L330 250"/><path d="M325 135 L410 250"/><path d="M415 135 L490 250"/><path d="M505 135 L570 250"/><path d="M595 135 L650 250"/><path d="M685 135 L730 250"/><path d="M775 135 L810 250"/><path d="M865 135 L890 250"/><path d="M955 135 L970 250"/><path d="M1045 135 L1050 250"/><path d="M1135 135 L1130 250"/>
   </g>
-  <!-- Bright ripple pulses -->
-  <g fill="none" stroke="#8be9ff" stroke-width="2" filter="url(#glow)">
-    <circle cx="100" cy="111" r="10" opacity=".7">
-      <animate attributeName="cx" values="100;1100;100" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="10;70;10" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values=".8;0;.8" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="100" cy="111" r="10" opacity=".55">
-      <animate attributeName="cx" values="100;1100;100" dur="6s" begin=".65s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="10;70;10" dur="2s" begin=".65s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values=".6;0;.6" dur="2s" begin=".65s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="100" cy="111" r="10" opacity=".4">
-      <animate attributeName="cx" values="100;1100;100" dur="6s" begin="1.3s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="10;70;10" dur="2s" begin="1.3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values=".45;0;.45" dur="2s" begin="1.3s" repeatCount="indefinite"/>
-    </circle>
+
+  <!-- Layered elevation ridges -->
+  <g fill="none" stroke="#6366f1" stroke-opacity=".24" stroke-width="1.2">
+    <path d="M0 218 C100 200 130 214 210 190 S330 205 420 175 S540 205 630 168 S760 194 850 160 S990 192 1080 165 S1160 178 1220 150"/>
+    <path d="M0 228 C100 210 150 222 230 200 S350 214 440 186 S550 216 650 178 S770 205 870 172 S990 204 1090 178 S1170 190 1220 164"/>
+    <path d="M0 238 C100 220 160 232 245 211 S370 225 460 198 S575 228 670 190 S790 216 890 184 S1010 218 1100 190 S1180 202 1220 178"/>
   </g>
-  <!-- Traveling sine wave -->
-  <path d="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112" fill="none" stroke="#8be9ff" stroke-width="2" stroke-opacity=".55" filter="url(#glow)">
-    <animate attributeName="d" dur="3.2s" repeatCount="indefinite" values="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112;M0 112 C120 159 200 65 320 112 S520 159 640 112 S840 65 960 112 S1080 159 1200 112;M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112"/>
+
+  <!-- Main 3D terrain silhouette -->
+  <path d="M0 238 C70 226 90 205 145 213 C195 220 205 171 255 184 C310 198 320 132 365 153 C415 176 425 195 475 176 C530 155 535 105 585 126 C640 149 650 183 700 157 C750 132 770 83 815 105 C870 131 875 171 925 147 C980 120 995 88 1040 111 C1090 137 1105 170 1150 145 C1180 129 1200 132 1220 118 L1220 250 L0 250 Z" fill="url(#terrain)" fill-opacity=".52"/>
+
+  <!-- Vertical elevation faces -->
+  <g fill="#30346f" fill-opacity=".42">
+    <path d="M145 213 L145 238 L195 245 L195 220 Z"/>
+    <path d="M255 184 L255 238 L310 245 L310 198 Z"/>
+    <path d="M365 153 L365 238 L415 245 L415 176 Z"/>
+    <path d="M585 126 L585 238 L640 245 L640 149 Z"/>
+    <path d="M815 105 L815 238 L870 245 L870 131 Z"/>
+    <path d="M1040 111 L1040 238 L1090 245 L1090 137 Z"/>
+  </g>
+
+  <!-- Animated scanning ridge -->
+  <path d="M-120 195 C0 170 90 205 180 183 S360 185 450 156 S630 185 720 147 S900 174 990 144 S1140 168 1260 130" fill="none" stroke="url(#ridge)" stroke-width="3" filter="url(#glow)">
+    <animate attributeName="stroke-dasharray" values="30 1400;220 1210;30 1400" dur="3.8s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-dashoffset" values="0;-1450;0" dur="3.8s" repeatCount="indefinite"/>
   </path>
+
+  <!-- Rising contribution peaks -->
+  <g fill="#8be9ff" filter="url(#glow)">
+    <rect x="138" y="204" width="9" height="9" rx="2"><animate attributeName="y" values="204;188;204" dur="2.4s" repeatCount="indefinite"/></rect>
+    <rect x="248" y="175" width="9" height="9" rx="2"><animate attributeName="y" values="175;151;175" dur="2.7s" begin=".2s" repeatCount="indefinite"/></rect>
+    <rect x="358" y="144" width="9" height="9" rx="2"><animate attributeName="y" values="144;116;144" dur="2.9s" begin=".4s" repeatCount="indefinite"/></rect>
+    <rect x="578" y="117" width="9" height="9" rx="2"><animate attributeName="y" values="117;83;117" dur="3.1s" begin=".7s" repeatCount="indefinite"/></rect>
+    <rect x="808" y="96" width="9" height="9" rx="2"><animate attributeName="y" values="96;58;96" dur="3.3s" begin="1s" repeatCount="indefinite"/></rect>
+    <rect x="1033" y="102" width="9" height="9" rx="2"><animate attributeName="y" values="102;70;102" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
+  </g>
 </g>
-<text x="28" y="199" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">LOW ACTIVITY</text>
-<text x="600" y="199" text-anchor="middle" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">WAVE PULSE • RIPPLE • CONTRIBUTION FLOW</text>
-<text x="1172" y="199" text-anchor="end" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">HIGH ACTIVITY</text>
+
+<text x="28" y="278" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">LOW ELEVATION</text>
+<text x="600" y="278" text-anchor="middle" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">CONTRIBUTIONS RISE INTO A LIVING 3D TERRAIN</text>
+<text x="1172" y="278" text-anchor="end" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">HIGH ELEVATION</text>
 </svg>
