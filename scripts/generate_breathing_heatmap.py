@@ -8,7 +8,7 @@ USERNAME = "Likethan"
 API = f"https://github-contributions-api.jogruber.de/v4/{USERNAME}?y=last"
 OUT = Path("output/contribution-wave.svg")
 
-# Real GitHub contribution data is fetched at generation time.
+# REAL DATA + FLOW FIELD RENDERER: GitHub activity drives the visual intensity.
 with urllib.request.urlopen(API, timeout=30) as response:
     payload = json.load(response)
 
@@ -51,8 +51,8 @@ svg = [
     f'<g transform="translate({left} {top})">'
 ]
 
-# Base contribution cells remain the tracking layer.
-# Animated field lines and particles are derived from each cell's real intensity.
+# Every cell is derived from the live contribution API. Active cells become
+# local flow sources: stronger activity means brighter, faster currents.
 for i, d in enumerate(days):
     item = by_date.get(d.isoformat(), {})
     count = int(item.get("count", 0))
@@ -67,8 +67,6 @@ for i, d in enumerate(days):
         svg.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4" fill="{fill}"/>')
         continue
 
-    # A deterministic local vector field. The phase differs per cell so the
-    # animation travels as a coherent current instead of flashing in unison.
     phase = (col * 0.42 + row * 0.71) % (math.pi * 2)
     duration = max(2.8, 7.0 - level * 0.7)
     delay = -((col * 0.23 + row * 0.37) % duration)
@@ -76,7 +74,13 @@ for i, d in enumerate(days):
     particle_r = 1.1 + level * 0.35
     opacity = 0.38 + level * 0.12
 
-    svg.append(f'<g filter="url(#softGlow)">')
+    c1x = x + cell * 0.15
+    c1y = y + cell * (0.75 - 0.10 * math.sin(phase))
+    c2x = x + cell * 0.72
+    c2y = y + cell * (0.20 + 0.12 * math.cos(phase))
+    path = f'M {x-3} {y+cell*0.62:.2f} C {c1x:.2f} {c1y:.2f}, {c2x:.2f} {c2y:.2f}, {x+cell+3} {y+cell*0.38:.2f}'
+
+    svg.append('<g filter="url(#softGlow)">')
     svg.append(
         f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="4" fill="{fill}">'
         f'<title>{d.isoformat()} — {count} contribution{"s" if count != 1 else ""}</title>'
@@ -84,22 +88,13 @@ for i, d in enumerate(days):
         f'<animate attributeName="rx" values="4;7;5;4" dur="{duration * 1.15:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
         f'</rect>'
     )
-
-    # Curved current crossing the cell.
-    c1x = x + cell * 0.15
-    c1y = y + cell * (0.75 - 0.10 * math.sin(phase))
-    c2x = x + cell * 0.72
-    c2y = y + cell * (0.20 + 0.12 * math.cos(phase))
-    path = f'M {x-3} {y+cell*0.62:.2f} C {c1x:.2f} {c1y:.2f}, {c2x:.2f} {c2y:.2f}, {x+cell+3} {y+cell*0.38:.2f}'
     svg.append(
         f'<path d="{path}" fill="none" stroke="#d5b8ff" stroke-opacity=".24" stroke-width="{0.7 + level*0.18:.2f}" stroke-linecap="round" stroke-dasharray="{travel:.1f} {travel*1.7:.1f}">'
         f'<animate attributeName="stroke-dashoffset" from="0" to="-{travel*2.7:.1f}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
         f'</path>'
     )
-
-    # A bright particle rides the current and loops through the cell.
     svg.append(
-        f'<circle cx="{x + cell*0.18:.2f}" cy="{y + cell*0.62:.2f}" r="{particle_r:.2f}" fill="#e9dcff" opacity=".0">'
+        f'<circle cx="{x + cell*0.18:.2f}" cy="{y + cell*0.62:.2f}" r="{particle_r:.2f}" fill="#e9dcff" opacity="0">'
         f'<animate attributeName="cx" values="{x + cell*0.15:.2f};{x + cell*0.50:.2f};{x + cell*0.88:.2f};{x + cell*0.15:.2f}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
         f'<animate attributeName="cy" values="{y + cell*0.62:.2f};{y + cell*0.46:.2f};{y + cell*0.38:.2f};{y + cell*0.62:.2f}" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
         f'<animate attributeName="opacity" values="0;{min(1, 0.55 + level*0.1):.2f};0" dur="{duration:.2f}s" begin="{delay:.2f}s" repeatCount="indefinite"/>'
@@ -107,16 +102,15 @@ for i, d in enumerate(days):
     )
     svg.append('</g>')
 
-# Add a sparse secondary current over the entire grid for a true field effect.
-field_y = (weeks * (cell + gap)) * 0.38
-for lane in range(5):
-    y0 = 24 + lane * 31
-    amp = 7 + lane * 1.4
-    path = f'M -20 {y0} C {width*0.25:.1f} {y0-amp:.1f}, {width*0.48:.1f} {y0+amp:.1f}, {width*0.72:.1f} {y0} S {width+10:.1f} {y0-amp:.1f}, {width+20:.1f} {y0+amp/2:.1f}'
-    dur = 12 + lane * 1.7
+# Global streamlines make the individual cell currents read as one field.
+for lane in range(7):
+    y0 = 40 + lane * 34
+    amp = 8 + lane * 1.5
+    path = f'M -24 {y0} C {width*0.22:.1f} {y0-amp:.1f}, {width*0.46:.1f} {y0+amp:.1f}, {width*0.70:.1f} {y0} S {width+8:.1f} {y0-amp:.1f}, {width+24:.1f} {y0+amp/2:.1f}'
+    dur = 11 + lane * 1.4
     svg.append(
-        f'<path d="{path}" fill="none" stroke="#9c6cff" stroke-opacity=".055" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 18">'
-        f'<animate attributeName="stroke-dashoffset" from="0" to="-200" dur="{dur:.1f}s" repeatCount="indefinite"/>'
+        f'<path d="{path}" fill="none" stroke="#9c6cff" stroke-opacity=".065" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="2 18">'
+        f'<animate attributeName="stroke-dashoffset" from="0" to="-220" dur="{dur:.1f}s" repeatCount="indefinite"/>'
         f'</path>'
     )
 
