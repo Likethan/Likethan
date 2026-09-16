@@ -1,64 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
-<title id="title">Likethan's 3D Elevation Terrain GitHub Contribution Graph</title>
-<desc id="desc">A perspective terrain visualization where contribution activity rises into animated 3D elevation peaks.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">Likethan's 3D Contribution Terrain</title>
+<desc id="desc">A true isometric contribution grid made from raised 3D cells, with animated elevation pulses.</desc>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06070a"/><stop offset="1" stop-color="#11151d"/></linearGradient>
-  <linearGradient id="terrain" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9bf6ff"/><stop offset=".45" stop-color="#6366f1"/><stop offset="1" stop-color="#171a24"/></linearGradient>
-  <linearGradient id="ridge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset=".5" stop-color="#a5f3fc"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></linearGradient>
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <clipPath id="clip"><rect x="25" y="48" width="1150" height="202" rx="14"/></clipPath>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050608"/><stop offset="1" stop-color="#111522"/></linearGradient>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a5f3fc"/><stop offset=".45" stop-color="#6366f1"/><stop offset="1" stop-color="#312e81"/></linearGradient>
+<linearGradient id="sideA" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4f46a5"/><stop offset="1" stop-color="#17182b"/></linearGradient>
+<linearGradient id="sideB" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#373477"/><stop offset="1" stop-color="#11121e"/></linearGradient>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="clip"><rect x="20" y="45" width="1160" height="250" rx="16"/></clipPath>
 </defs>
-<rect width="1200" height="300" rx="20" fill="url(#bg)"/>
-<rect x="1" y="1" width="1198" height="298" rx="19" fill="none" stroke="#fff" stroke-opacity=".08"/>
-<text x="28" y="28" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">CONTRIBUTION TERRAIN</text>
-<text x="1172" y="28" text-anchor="end" fill="#7d8590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9" letter-spacing="1.5">3D ELEVATION / TERRAIN / ACTIVITY</text>
-
+<rect width="1200" height="330" rx="20" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="328" rx="19" fill="none" stroke="#fff" stroke-opacity=".08"/>
+<text x="28" y="27" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">CONTRIBUTION TERRAIN</text>
+<text x="1172" y="27" text-anchor="end" fill="#7d8590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9" letter-spacing="1.5">3D ELEVATION / VOXELS / ACTIVITY</text>
 <g clip-path="url(#clip)">
-  <!-- Perspective floor -->
-  <path d="M25 238 L1175 238 L1175 250 L25 250 Z" fill="#0c1016"/>
-  <g stroke="#64748b" stroke-opacity=".13" stroke-width="1">
-    <path d="M25 238 H1175"/><path d="M25 218 H1175"/><path d="M25 198 H1175"/><path d="M25 178 H1175"/><path d="M25 158 H1175"/><path d="M25 138 H1175"/>
-    <path d="M55 135 L170 250"/><path d="M145 135 L250 250"/><path d="M235 135 L330 250"/><path d="M325 135 L410 250"/><path d="M415 135 L490 250"/><path d="M505 135 L570 250"/><path d="M595 135 L650 250"/><path d="M685 135 L730 250"/><path d="M775 135 L810 250"/><path d="M865 135 L890 250"/><path d="M955 135 L970 250"/><path d="M1045 135 L1050 250"/><path d="M1135 135 L1130 250"/>
-  </g>
-
-  <!-- Layered elevation ridges -->
-  <g fill="none" stroke="#6366f1" stroke-opacity=".24" stroke-width="1.2">
-    <path d="M0 218 C100 200 130 214 210 190 S330 205 420 175 S540 205 630 168 S760 194 850 160 S990 192 1080 165 S1160 178 1220 150"/>
-    <path d="M0 228 C100 210 150 222 230 200 S350 214 440 186 S550 216 650 178 S770 205 870 172 S990 204 1090 178 S1170 190 1220 164"/>
-    <path d="M0 238 C100 220 160 232 245 211 S370 225 460 198 S575 228 670 190 S790 216 890 184 S1010 218 1100 190 S1180 202 1220 178"/>
-  </g>
-
-  <!-- Main 3D terrain silhouette -->
-  <path d="M0 238 C70 226 90 205 145 213 C195 220 205 171 255 184 C310 198 320 132 365 153 C415 176 425 195 475 176 C530 155 535 105 585 126 C640 149 650 183 700 157 C750 132 770 83 815 105 C870 131 875 171 925 147 C980 120 995 88 1040 111 C1090 137 1105 170 1150 145 C1180 129 1200 132 1220 118 L1220 250 L0 250 Z" fill="url(#terrain)" fill-opacity=".52"/>
-
-  <!-- Vertical elevation faces -->
-  <g fill="#30346f" fill-opacity=".42">
-    <path d="M145 213 L145 238 L195 245 L195 220 Z"/>
-    <path d="M255 184 L255 238 L310 245 L310 198 Z"/>
-    <path d="M365 153 L365 238 L415 245 L415 176 Z"/>
-    <path d="M585 126 L585 238 L640 245 L640 149 Z"/>
-    <path d="M815 105 L815 238 L870 245 L870 131 Z"/>
-    <path d="M1040 111 L1040 238 L1090 245 L1090 137 Z"/>
-  </g>
-
-  <!-- Animated scanning ridge -->
-  <path d="M-120 195 C0 170 90 205 180 183 S360 185 450 156 S630 185 720 147 S900 174 990 144 S1140 168 1260 130" fill="none" stroke="url(#ridge)" stroke-width="3" filter="url(#glow)">
-    <animate attributeName="stroke-dasharray" values="30 1400;220 1210;30 1400" dur="3.8s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-dashoffset" values="0;-1450;0" dur="3.8s" repeatCount="indefinite"/>
-  </path>
-
-  <!-- Rising contribution peaks -->
-  <g fill="#8be9ff" filter="url(#glow)">
-    <rect x="138" y="204" width="9" height="9" rx="2"><animate attributeName="y" values="204;188;204" dur="2.4s" repeatCount="indefinite"/></rect>
-    <rect x="248" y="175" width="9" height="9" rx="2"><animate attributeName="y" values="175;151;175" dur="2.7s" begin=".2s" repeatCount="indefinite"/></rect>
-    <rect x="358" y="144" width="9" height="9" rx="2"><animate attributeName="y" values="144;116;144" dur="2.9s" begin=".4s" repeatCount="indefinite"/></rect>
-    <rect x="578" y="117" width="9" height="9" rx="2"><animate attributeName="y" values="117;83;117" dur="3.1s" begin=".7s" repeatCount="indefinite"/></rect>
-    <rect x="808" y="96" width="9" height="9" rx="2"><animate attributeName="y" values="96;58;96" dur="3.3s" begin="1s" repeatCount="indefinite"/></rect>
-    <rect x="1033" y="102" width="9" height="9" rx="2"><animate attributeName="y" values="102;70;102" dur="3s" begin="1.2s" repeatCount="indefinite"/></rect>
-  </g>
+<!-- isometric ground grid -->
+<g stroke="#64748b" stroke-opacity=".12" stroke-width="1" fill="none">
+<path d="M110 270 L600 90 L1090 270"/><path d="M60 290 L600 92 L1140 290"/><path d="M180 295 L600 142 L1020 295"/>
+<path d="M170 245 L1030 245"/><path d="M230 220 L970 220"/><path d="M300 195 L900 195"/><path d="M365 170 L835 170"/>
 </g>
 
-<text x="28" y="278" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">LOW ELEVATION</text>
-<text x="600" y="278" text-anchor="middle" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">CONTRIBUTIONS RISE INTO A LIVING 3D TERRAIN</text>
-<text x="1172" y="278" text-anchor="end" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">HIGH ELEVATION</text>
+<!-- raised contribution cells; each cell is a small 3D prism -->
+<g stroke="#0b0d16" stroke-width="1" stroke-linejoin="round">
+<!-- row 1 -->
+<g transform="translate(250 205)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 18 L0 12 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 12 L15 18 Z" fill="url(#sideA)"/></g>
+<g transform="translate(300 187)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 27 L0 21 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 21 L15 27 Z" fill="url(#sideA)"/></g>
+<g transform="translate(350 168)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 38 L0 32 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 32 L15 38 Z" fill="url(#sideA)"/></g>
+<g transform="translate(400 191)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 23 L0 17 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 17 L15 23 Z" fill="url(#sideA)"/></g>
+<g transform="translate(450 149)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 48 L0 42 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 42 L15 48 Z" fill="url(#sideA)"/></g>
+<g transform="translate(500 175)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 31 L0 25 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 25 L15 31 Z" fill="url(#sideA)"/></g>
+<g transform="translate(550 125)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 64 L0 58 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 58 L15 64 Z" fill="url(#sideA)"/></g>
+<g transform="translate(600 155)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 40 L0 34 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 34 L15 40 Z" fill="url(#sideA)"/></g>
+<g transform="translate(650 105)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 74 L0 68 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 68 L15 74 Z" fill="url(#sideA)"/></g>
+<g transform="translate(700 140)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 48 L0 42 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 42 L15 48 Z" fill="url(#sideA)"/></g>
+<g transform="translate(750 116)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 60 L0 54 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 54 L15 60 Z" fill="url(#sideA)"/></g>
+<g transform="translate(800 154)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 38 L0 32 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 32 L15 38 Z" fill="url(#sideA)"/></g>
+<g transform="translate(850 133)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 52 L0 46 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 46 L15 52 Z" fill="url(#sideA)"/></g>
+<g transform="translate(900 170)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 30 L0 24 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 24 L15 30 Z" fill="url(#sideA)"/></g>
+<!-- second staggered row -->
+<g opacity=".92" transform="translate(275 225)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 15 L0 9 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 9 L15 15 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(325 207)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 22 L0 16 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 16 L15 22 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(375 218)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 32 L0 26 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 26 L15 32 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(425 198)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 42 L0 36 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 36 L15 42 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(475 215)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 20 L0 14 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 14 L15 20 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(525 190)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 52 L0 46 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 46 L15 52 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(575 207)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 34 L0 28 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 28 L15 34 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(625 185)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 60 L0 54 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 54 L15 60 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(675 203)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 30 L0 24 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 24 L15 30 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(725 180)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 50 L0 44 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 44 L15 50 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(775 205)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 24 L0 18 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 18 L15 24 Z" fill="url(#sideA)"/></g>
+<g opacity=".92" transform="translate(825 192)"><path d="M0 0 L15 -6 L30 0 L15 6 Z" fill="url(#top)"/><path d="M0 0 L15 6 L15 42 L0 36 Z" fill="url(#sideB)"/><path d="M15 6 L30 0 L30 36 L15 42 Z" fill="url(#sideA)"/></g>
+</g>
+
+<!-- animated elevation scanner -->
+<path d="M190 246 L600 96 L1010 246" fill="none" stroke="#8be9ff" stroke-width="2" stroke-opacity=".7" stroke-dasharray="35 70" filter="url(#glow)">
+<animate attributeName="stroke-dashoffset" from="0" to="-315" dur="2.8s" repeatCount="indefinite"/>
+</path>
+<!-- pulsing high-activity beacon -->
+<g transform="translate(665 105)" fill="#a5f3fc" filter="url(#glow)">
+<circle r="4"><animate attributeName="r" values="4;10;4" dur="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.15;1" dur="1.6s" repeatCount="indefinite"/></circle>
+</g>
+</g>
+<text x="28" y="312" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">LOW ACTIVITY</text>
+<text x="600" y="312" text-anchor="middle" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">EACH CONTRIBUTION BECOMES A RAISED 3D CELL</text>
+<text x="1172" y="312" text-anchor="end" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">HIGH ACTIVITY</text>
 </svg>
