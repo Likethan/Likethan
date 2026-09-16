@@ -1,0 +1,55 @@
+name: Update Animated Contribution Wave
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/generate_contribution_wave.py"
+      - "activity/daily-streak.log"
+      - ".github/workflows/contribution-wave.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-wave:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Generate animated wave
+        run: python3 scripts/generate_contribution_wave.py
+
+      - name: Replace README activity graph
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("README.md")
+          text = path.read_text(encoding="utf-8")
+          old = 'https://github-readme-activity-graph.vercel.app/graph?username=Likethan&bg_color=0d1117&color=ffffff&line=6E56CF&point=ffffff&area=true&hide_border=true'
+          new = 'https://raw.githubusercontent.com/Likethan/Likethan/main/output/contribution-wave.svg'
+
+          if old not in text:
+              raise SystemExit("Existing GitHub activity graph URL was not found in README.md")
+
+          text = text.replace(old, new, 1)
+          text = text.replace('alt="Likethan\'s GitHub activity graph"', 'alt="Likethan\'s animated contribution wave"', 1)
+          path.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Commit generated graph
+        run: |
+          git config user.name "Likethan"
+          git config user.email "Likethan@users.noreply.github.com"
+          git add output/contribution-wave.svg README.md
+          if git diff --cached --quiet; then
+            echo "No contribution wave changes to commit."
+            exit 0
+          fi
+          git commit -m "feat: add animated contribution wave"
+          git push origin HEAD:main
