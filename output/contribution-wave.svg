@@ -1,29 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="300" viewBox="0 0 1100 300" role="img" aria-labelledby="title desc">
-<title id="title">Likethan's Liquid Fill GitHub Contribution Graph</title>
-<desc id="desc">A liquid-filled animated contribution visualization. Higher activity produces a higher liquid level.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="title desc">
+<title id="title">Likethan's Wave Ripple GitHub Contribution Graph</title>
+<desc id="desc">An animated contribution grid with a traveling wave and expanding ripple effect.</desc>
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08090d"/><stop offset="1" stop-color="#11131b"/></linearGradient>
-  <linearGradient id="liquid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset=".55" stop-color="#6e56cf"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
-  <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#fff" stroke-opacity=".035"/></pattern>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07080b"/><stop offset="1" stop-color="#10131a"/></linearGradient>
+  <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset=".5" stop-color="#8be9ff"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="grid" width="21" height="21" patternUnits="userSpaceOnUse"><rect width="15" height="15" rx="3" fill="#171a20"/><rect width="15" height="15" rx="3" fill="none" stroke="#fff" stroke-opacity=".035"/></pattern>
+  <clipPath id="clip"><rect x="28" y="48" width="1144" height="126" rx="12"/></clipPath>
 </defs>
-<rect width="1100" height="300" rx="24" fill="url(#bg)"/>
-<rect x="1" y="1" width="1098" height="298" rx="23" fill="url(#grid)" stroke="#252936"/>
-<text x="30" y="32" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="1">LIQUID CONTRIBUTIONS</text>
-<text x="1070" y="32" text-anchor="end" fill="#8f96a8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" letter-spacing="1.5">ACTIVITY → LIQUID LEVEL</text>
+<rect width="1200" height="220" rx="18" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="218" rx="17" fill="none" stroke="#fff" stroke-opacity=".08"/>
+<text x="28" y="27" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">CONTRIBUTION RIPPLE</text>
+<text x="1172" y="27" text-anchor="end" fill="#7d8590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9" letter-spacing="1.5">WAVE / INTERACTION / FLOW</text>
 
-<g transform="translate(30 62)">
-  <g fill="#0b0d13" stroke="#272b38" stroke-width="1">
-    <rect x="0" y="0" width="22" height="176" rx="11"/><rect x="28" y="0" width="22" height="176" rx="11"/><rect x="56" y="0" width="22" height="176" rx="11"/><rect x="84" y="0" width="22" height="176" rx="11"/><rect x="112" y="0" width="22" height="176" rx="11"/><rect x="140" y="0" width="22" height="176" rx="11"/><rect x="168" y="0" width="22" height="176" rx="11"/><rect x="196" y="0" width="22" height="176" rx="11"/><rect x="224" y="0" width="22" height="176" rx="11"/><rect x="252" y="0" width="22" height="176" rx="11"/><rect x="280" y="0" width="22" height="176" rx="11"/><rect x="308" y="0" width="22" height="176" rx="11"/><rect x="336" y="0" width="22" height="176" rx="11"/><rect x="364" y="0" width="22" height="176" rx="11"/><rect x="392" y="0" width="22" height="176" rx="11"/><rect x="420" y="0" width="22" height="176" rx="11"/><rect x="448" y="0" width="22" height="176" rx="11"/><rect x="476" y="0" width="22" height="176" rx="11"/><rect x="504" y="0" width="22" height="176" rx="11"/><rect x="532" y="0" width="22" height="176" rx="11"/><rect x="560" y="0" width="22" height="176" rx="11"/><rect x="588" y="0" width="22" height="176" rx="11"/><rect x="616" y="0" width="22" height="176" rx="11"/><rect x="644" y="0" width="22" height="176" rx="11"/><rect x="672" y="0" width="22" height="176" rx="11"/><rect x="700" y="0" width="22" height="176" rx="11"/><rect x="728" y="0" width="22" height="176" rx="11"/><rect x="756" y="0" width="22" height="176" rx="11"/><rect x="784" y="0" width="22" height="176" rx="11"/><rect x="812" y="0" width="22" height="176" rx="11"/><rect x="840" y="0" width="22" height="176" rx="11"/><rect x="868" y="0" width="22" height="176" rx="11"/><rect x="896" y="0" width="22" height="176" rx="11"/><rect x="924" y="0" width="22" height="176" rx="11"/><rect x="952" y="0" width="22" height="176" rx="11"/><rect x="980" y="0" width="22" height="176" rx="11"/>
+<g clip-path="url(#clip)">
+  <rect x="28" y="48" width="1144" height="126" fill="url(#grid)"/>
+
+  <!-- Moving wave front -->
+  <g filter="url(#glow)" opacity=".8">
+    <rect x="-90" y="35" width="90" height="150" fill="url(#wave)" transform="skewX(-12)">
+      <animate attributeName="x" from="-120" to="1210" dur="5.5s" repeatCount="indefinite"/>
+    </rect>
   </g>
-  <g fill="url(#liquid)" filter="url(#glow)" opacity=".92">
-    <rect x="2" y="126" width="18" height="48" rx="9"/><rect x="30" y="96" width="18" height="78" rx="9"/><rect x="58" y="145" width="18" height="29" rx="9"/><rect x="86" y="70" width="18" height="104" rx="9"/><rect x="114" y="116" width="18" height="58" rx="9"/><rect x="142" y="46" width="18" height="128" rx="9"/><rect x="170" y="132" width="18" height="42" rx="9"/><rect x="198" y="82" width="18" height="92" rx="9"/><rect x="226" y="104" width="18" height="70" rx="9"/><rect x="254" y="32" width="18" height="142" rx="9"/><rect x="282" y="121" width="18" height="53" rx="9"/><rect x="310" y="63" width="18" height="111" rx="9"/><rect x="338" y="92" width="18" height="82" rx="9"/><rect x="366" y="23" width="18" height="151" rx="9"/><rect x="394" y="130" width="18" height="44" rx="9"/><rect x="422" y="76" width="18" height="98" rx="9"/><rect x="450" y="53" width="18" height="121" rx="9"/><rect x="478" y="112" width="18" height="62" rx="9"/><rect x="506" y="38" width="18" height="136" rx="9"/><rect x="534" y="99" width="18" height="75" rx="9"/><rect x="562" y="68" width="18" height="106" rx="9"/><rect x="590" y="127" width="18" height="47" rx="9"/><rect x="618" y="30" width="18" height="144" rx="9"/><rect x="646" y="88" width="18" height="86" rx="9"/><rect x="674" y="55" width="18" height="119" rx="9"/><rect x="702" y="114" width="18" height="60" rx="9"/><rect x="730" y="42" width="18" height="132" rx="9"/><rect x="758" y="72" width="18" height="102" rx="9"/><rect x="786" y="126" width="18" height="48" rx="9"/><rect x="814" y="20" width="18" height="154" rx="9"/><rect x="842" y="94" width="18" height="80" rx="9"/><rect x="870" y="61" width="18" height="113" rx="9"/><rect x="898" y="106" width="18" height="68" rx="9"/><rect x="926" y="34" width="18" height="140" rx="9"/><rect x="954" y="84" width="18" height="90" rx="9"/><rect x="982" y="50" width="18" height="124" rx="9"/>
+
+  <!-- Highlight bands travel through the contribution cells -->
+  <g fill="#8be9ff" filter="url(#glow)">
+    <g opacity=".0">
+      <rect x="70" y="69" width="15" height="15" rx="3"/><rect x="91" y="90" width="15" height="15" rx="3"/><rect x="112" y="111" width="15" height="15" rx="3"/><rect x="133" y="132" width="15" height="15" rx="3"/>
+      <animateTransform attributeName="transform" type="translate" from="-170 0" to="1000 0" dur="5.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.85;0" dur="5.5s" repeatCount="indefinite"/>
+    </g>
   </g>
-  <g fill="none" stroke="#dbeafe" stroke-opacity=".75" stroke-width="1.4">
-    <path d="M2 126 Q7 120 11 126 T20 126"/><path d="M282 121 Q287 115 291 121 T300 121"/><path d="M506 38 Q511 32 515 38 T524 38"/><path d="M814 20 Q819 14 823 20 T832 20"/>
+
+  <!-- Expanding ripple rings -->
+  <g fill="none" stroke="#8be9ff" stroke-width="1.2" opacity="0">
+    <circle cx="120" cy="111" r="12">
+      <animate attributeName="cx" values="120;1080;120" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="12;90;12" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".75;0;.75" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="111" r="12">
+      <animate attributeName="cx" values="120;1080;120" dur="7s" begin=".7s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="12;90;12" dur="2.2s" begin=".7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".55;0;.55" dur="2.2s" begin=".7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="111" r="12">
+      <animate attributeName="cx" values="120;1080;120" dur="7s" begin="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="12;90;12" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".35;0;.35" dur="2.2s" begin="1.4s" repeatCount="indefinite"/>
+    </circle>
   </g>
-  <g fill="#8f96a8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="9"><text x="0" y="194">LOW</text><text x="1002" y="194" text-anchor="end">HIGH</text></g>
+
+  <!-- Organic sine wave crossing the graph -->
+  <path d="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112" fill="none" stroke="#8be9ff" stroke-width="1.5" stroke-opacity=".28">
+    <animate attributeName="d" dur="3.8s" repeatCount="indefinite" values="M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112;M0 112 C120 159 200 65 320 112 S520 159 640 112 S840 65 960 112 S1080 159 1200 112;M0 112 C120 65 200 159 320 112 S520 65 640 112 S840 159 960 112 S1080 65 1200 112"/>
+  </path>
 </g>
-<g opacity=".55" fill="#a5b4fc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="10"><text x="30" y="280">LESS ACTIVITY</text><text x="550" y="280" text-anchor="middle">LIQUID DEPTH REPRESENTS CONTRIBUTION INTENSITY</text><text x="1070" y="280" text-anchor="end">MORE ACTIVITY</text></g>
+
+<text x="28" y="199" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">LOW ACTIVITY</text>
+<text x="600" y="199" text-anchor="middle" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">ACTIVITY FLOWS THROUGH THE GRID AS A TRAVELING RIPPLE</text>
+<text x="1172" y="199" text-anchor="end" fill="#626b78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="8" letter-spacing="1.2">HIGH ACTIVITY</text>
 </svg>
