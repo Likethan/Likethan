@@ -35,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/generate_contribution_city.py
 
-      - name: Publish circuit graph
+      - name: Publish 3D city graph
         run: |
           git config user.name "Likethan"
           git config user.email "Likethan@users.noreply.github.com"
