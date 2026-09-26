@@ -228,7 +228,7 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 ## 📊 GitHub Activity
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/main/output/contribution-wave.svg" width="98%" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/main/output/contribution-circuit.svg" width="98%" alt="Likethan's GitHub contribution circuit" />
 </p>
 
 <p align="center">
@@ -258,10 +258,10 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 
 ---
 
-## 🌌 Contribution City
+## ⚡ Contribution Circuit
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/output/contribution-city.gif" alt="Likethan's animated contribution galaxy" width="92%" />
+  <img src="https://raw.githubusercontent.com/Likethan/Likethan/main/output/contribution-circuit.svg" alt="Likethan's GitHub contribution circuit" width="96%" />
 </p>
 
 ---
