@@ -1,0 +1,41 @@
+name: Contribution City Renderer
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-city-renderer
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Generate 3D contribution city
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/generate_contribution_city.py
+          test -s output/contribution-city.svg
+
+      - name: Publish generated city
+        run: |
+          git config user.name "Likethan"
+          git config user.email "Likethan@users.noreply.github.com"
+          git add output/contribution-city.svg
+          if git diff --cached --quiet; then
+            echo "3D city is already current."
+            exit 0
+          fi
+          git commit -m "chore: refresh 3D contribution city"
+          git push origin HEAD:main
