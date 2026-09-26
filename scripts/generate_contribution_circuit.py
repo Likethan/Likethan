@@ -1,4 +1,5 @@
-# Circuit contribution visualizer — auto-generated from GitHub contribution data.\nimport json
+# Circuit contribution visualizer — auto-generated from GitHub contribution data.
+import json
 import os
 import urllib.request
 from html import escape
