@@ -42,3 +42,5 @@ jobs:
           git add output/contribution-city.svg
           git commit -m "chore: update 3D contribution city" || exit 0
           git push origin HEAD:main
+
+# 3D city renderer enabled
