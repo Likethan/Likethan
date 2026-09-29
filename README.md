@@ -228,10 +228,6 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 ## 📊 GitHub Activity
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/main/output/contribution-city.svg" width="98%" alt="Likethan's GitHub 3D contribution city" />
-</p>
-
-<p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Likethan&theme=github_dark" height="180" />
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Likethan&theme=github_dark" height="180" />
 </p>
@@ -254,14 +250,6 @@ A full-stack campus platform bringing attendance, assignments, placements, event
   <img src="https://img.shields.io/badge/AI-LLMs%20%7C%20RAG%20%7C%20Agents-6E56CF?style=flat-square" />
   <img src="https://img.shields.io/badge/Engineering-APIs%20%7C%20Architecture%20%7C%20Automation-6E56CF?style=flat-square" />
   <img src="https://img.shields.io/badge/Product-UX%20%7C%20Motion%20%7C%20DevEx-6E56CF?style=flat-square" />
-</p>
-
----
-
-## ⚡ 3D Contribution City
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Likethan/Likethan/main/output/contribution-city.svg" alt="Likethan's GitHub 3D contribution city" width="96%" />
 </p>
 
 ---
