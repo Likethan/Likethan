@@ -5,7 +5,6 @@ on:
     paths:
       - "scripts/generate_contribution_accord.py"
       - ".github/workflows/contribution-accord.yml"
-      - "output/contribution-accord.jpg"
   schedule:
     - cron: "20 1 * * *"
   workflow_dispatch:
