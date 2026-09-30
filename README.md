@@ -228,7 +228,7 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 ## 🚘 2003 Accord · Contribution Graph
 
 <p align="center">
-  <img src="./output/contribution-accord.svg" width="100%" alt="2003 Honda Accord rendered from GitHub contributions">
+  <img src="./output/contribution-accord.jpg" width="100%" alt="2003 Honda Accord contribution artwork powered by real GitHub contribution data">
 </p>
 
 ## 📊 GitHub Activity
