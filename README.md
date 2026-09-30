@@ -225,13 +225,11 @@ A full-stack campus platform bringing attendance, assignments, placements, event
 
 ---
 
-## 🚘 Contribution Machine
+## 🚘 2003 Accord · Contribution Graph
 
 <p align="center">
-  <img src="./output/contribution-accord.svg" width="100%" alt="2003 Honda Accord contribution graph — GitHub activity rendered as a car">
+  <img src="./output/contribution-accord.svg" width="100%" alt="2003 Honda Accord rendered from GitHub contributions">
 </p>
-
-> **Every tile is a contribution day. The Accord is the graph.**
 
 ## 📊 GitHub Activity
 
