@@ -5,6 +5,7 @@ on:
     paths:
       - "scripts/generate_contribution_accord.py"
       - ".github/workflows/contribution-accord.yml"
+      - "output/contribution-accord.jpg"
   schedule:
     - cron: "20 1 * * *"
   workflow_dispatch:
@@ -21,17 +22,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Render 2003 Accord contribution graph
+      - name: Install image renderer
+        run: python3 -m pip install --disable-pip-version-check pillow
+
+      - name: Fetch real GitHub contributions and refresh Accord
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          python3 scripts/generate_contribution_accord.py
+        run: python3 scripts/generate_contribution_accord.py
 
-      - name: Publish renderer
+      - name: Publish updated artwork
         run: |
           git config user.name "Likethan"
           git config user.email "173385979+Likethan@users.noreply.github.com"
-          git add output/contribution-accord.svg
+          git add output/contribution-accord.jpg
           git diff --cached --quiet && exit 0
-          git commit -m "chore: update Accord contribution graph"
+          git commit -m "chore: refresh live Accord contribution artwork"
           git push origin HEAD:main
