@@ -163,3 +163,4 @@ if __name__ == "__main__":
     main()
 
 # Renderer maintained for the profile contribution machine.
+# Visual edition: the generated SVG is the profile artwork itself, not a separate graph.
