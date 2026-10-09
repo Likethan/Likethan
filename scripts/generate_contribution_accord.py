@@ -5,7 +5,8 @@ from datetime import date, timedelta
 from PIL import Image, ImageDraw, ImageFont
 
 USERNAME = "Likethan"
-IMAGE = "output/contribution-accord.jpg"
+SOURCE_IMAGE = "asset/ChatGPT Image Sep 10, 2026, 04_12_00 PM.png"
+OUTPUT_IMAGE = "output/contribution-accord.jpg"
 
 QUERY = """
 query($login: String!) {
@@ -41,8 +42,18 @@ def fetch_calendar():
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=30) as response:
-        data = json.load(response)
+    last_error = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as response:
+                data = json.load(response)
+            break
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last_error = exc
+            if attempt == 2:
+                raise RuntimeError(f"GitHub GraphQL request failed after 3 attempts: {exc}") from exc
+            import time
+            time.sleep(2 ** attempt)
     if data.get("errors"):
         raise RuntimeError(data["errors"])
     return data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
@@ -76,7 +87,13 @@ def font(size, bold=False):
     return ImageFont.load_default()
 
 def render(calendar):
-    im = Image.open(IMAGE).convert("RGB")
+    if not os.path.isfile(SOURCE_IMAGE):
+        raise FileNotFoundError(
+            f"Base Accord artwork not found at {SOURCE_IMAGE}. "
+            "Keep the source PNG in the repository before running this workflow."
+        )
+    os.makedirs(os.path.dirname(OUTPUT_IMAGE), exist_ok=True)
+    im = Image.open(SOURCE_IMAGE).convert("RGB")
     draw = ImageDraw.Draw(im, "RGBA")
     w, h = im.size
     days = [d for week in calendar["weeks"] for d in week["contributionDays"]][-371:]
@@ -150,7 +167,9 @@ def render(calendar):
         r = max(1, int((1.0 + level * .45) * sx))
         draw.ellipse((x-r, y-r, x+r, y+r), fill=(52, 238, 171, min(220, 80 + level*35)))
 
-    im.save(IMAGE, quality=94, optimize=True, progressive=True)
+    im.save(OUTPUT_IMAGE, quality=94, optimize=True, progressive=True)
+    if not os.path.isfile(OUTPUT_IMAGE) or os.path.getsize(OUTPUT_IMAGE) == 0:
+        raise RuntimeError(f"Renderer did not produce a valid output file: {OUTPUT_IMAGE}")
 
 def main():
     calendar = fetch_calendar()
