@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 USERNAME = "Likethan"
 SOURCE_IMAGE = "asset/ChatGPT Image Sep 10, 2026, 04_12_00 PM.png"
+TARGET_SIZE = (3840, 2160)
 OUTPUT_IMAGE = "output/contribution-accord.jpg"
 
 QUERY = """
@@ -94,6 +95,8 @@ def render(calendar):
         )
     os.makedirs(os.path.dirname(OUTPUT_IMAGE), exist_ok=True)
     im = Image.open(SOURCE_IMAGE).convert("RGB")
+    # Always start from the untouched source artwork and render in 4K UHD.
+    im = im.resize(TARGET_SIZE, Image.Resampling.LANCZOS)
     draw = ImageDraw.Draw(im, "RGBA")
     w, h = im.size
     days = [d for week in calendar["weeks"] for d in week["contributionDays"]][-371:]
@@ -167,7 +170,10 @@ def render(calendar):
         r = max(1, int((1.0 + level * .45) * sx))
         draw.ellipse((x-r, y-r, x+r, y+r), fill=(52, 238, 171, min(220, 80 + level*35)))
 
-    im.save(OUTPUT_IMAGE, quality=94, optimize=True, progressive=True)
+    im.save(OUTPUT_IMAGE, format="JPEG", quality=97, subsampling=0, optimize=True, progressive=True)
+    with Image.open(OUTPUT_IMAGE) as check:
+        if check.size != TARGET_SIZE:
+            raise RuntimeError(f"Expected 4K output {TARGET_SIZE}, got {check.size}")
     if not os.path.isfile(OUTPUT_IMAGE) or os.path.getsize(OUTPUT_IMAGE) == 0:
         raise RuntimeError(f"Renderer did not produce a valid output file: {OUTPUT_IMAGE}")
 
