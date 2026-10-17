@@ -5,7 +5,7 @@ from datetime import date, timedelta
 from PIL import Image, ImageDraw, ImageFont
 
 USERNAME = "Likethan"
-SOURCE_IMAGE = "asset/ChatGPT Image Sep 10, 2026, 04_12_00 PM.png"
+SOURCE_IMAGE = "asset/accord-contribution-correct-source-4k.jpg"
 TARGET_SIZE = (3840, 2160)
 OUTPUT_IMAGE = "output/contribution-accord.jpg"
 
@@ -224,6 +224,12 @@ def render(calendar):
         raise RuntimeError(f"Renderer did not produce a valid output file: {OUTPUT_IMAGE}")
 
 def main():
+    # The source image is uploaded by the repository owner. Skip cleanly until it exists;
+    # the workflow watches this path and automatically reruns as soon as it is added.
+    if not os.path.isfile(SOURCE_IMAGE):
+        print(f"WAITING FOR SOURCE IMAGE: upload the correct 4K Accord image to {SOURCE_IMAGE}.")
+        print("No output was changed. The asset-upload push will trigger this workflow again.")
+        return
     calendar = fetch_calendar()
     render(calendar)
 
