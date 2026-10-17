@@ -106,28 +106,74 @@ def render(calendar):
     # The uploaded artwork is the base. Only contribution-dependent regions are refreshed.
     sx, sy = w / 1672, h / 941
 
-    # Contribution calendar area from the supplied artwork.
+    # Unique graph style: an isometric neon terrain / circuit heatmap.
+    # Each week is a column; each day is a raised diamond. Height and glow
+    # reflect GitHub's real contribution level instead of using a flat grid.
+    sx, sy = w / 1672, h / 941
+
     gx0, gy0, gx1, gy1 = [int(v * s) for v, s in [(75, sx), (180, sy), (552, sx), (272, sy)]]
-    draw.rounded_rectangle((gx0, gy0, gx1, gy1), radius=max(2, int(6*sx)), fill=(3, 12, 14, 205))
+    draw.rounded_rectangle(
+        (gx0, gy0, gx1, gy1),
+        radius=max(2, int(6*sx)),
+        fill=(2, 10, 13, 210),
+        outline=(24, 112, 91, 180),
+        width=max(1, int(1*sx)),
+    )
 
-    cols, rows = 53, 7
-    cell_w = max(1, int((gx1-gx0) / cols))
-    cell_h = max(1, int((gy1-gy0) / rows))
-    colors = [(8, 40, 38), (12, 70, 58), (20, 115, 88), (35, 178, 126), (65, 235, 175)]
+    colors = [
+        (8, 34, 34, 255),
+        (10, 70, 58, 255),
+        (16, 120, 87, 255),
+        (30, 184, 124, 255),
+        (76, 255, 181, 255),
+    ]
+    side_colors = [
+        (4, 20, 24, 255),
+        (5, 43, 39, 255),
+        (8, 74, 59, 255),
+        (13, 112, 78, 255),
+        (28, 157, 111, 255),
+    ]
 
-    for i in range(cols * rows):
-        if i >= len(days):
-            break
-        d = days[i]
-        level = LEVELS.get(d.get("contributionLevel"), 0)
-        x = gx0 + (i // rows) * cell_w
-        y = gy0 + (i % rows) * cell_h
-        pad = max(1, int(1*sx))
-        draw.rounded_rectangle(
-            (x+pad, y+pad, x+cell_w-pad, y+cell_h-pad),
-            radius=max(1, int(2*sx)),
-            fill=colors[level],
-        )
+    weeks = calendar["weeks"][-53:]
+    # Fit a full 53 x 7 calendar into the designated panel.
+    step_x = max(1, int((gx1 - gx0 - 24*sx) / 53))
+    step_y = max(1, int((gy1 - gy0 - 22*sy) / 7))
+    diamond_w = max(3, int(min(step_x * 0.72, step_y * 0.78)))
+    diamond_h = max(3, int(diamond_w * 0.52))
+    elevation_unit = max(1, int(2.2*sx))
+
+    for col, week in enumerate(weeks):
+        for row, day in enumerate(week["contributionDays"]):
+            level = LEVELS.get(day.get("contributionLevel"), 0)
+            if level == 0:
+                continue
+            cx = int(gx0 + 12*sx + col*step_x + step_x*0.5)
+            cy = int(gy0 + 12*sy + row*step_y + step_y*0.5)
+            lift = level * elevation_unit
+            top = [
+                (cx, cy - diamond_h - lift),
+                (cx + diamond_w, cy - lift),
+                (cx, cy + diamond_h - lift),
+                (cx - diamond_w, cy - lift),
+            ]
+            # Extruded side faces create the 3D terrain effect.
+            down = max(2, int(elevation_unit * 0.85))
+            draw.polygon(
+                [top[1], top[2], (top[2][0], top[2][1] + down), (top[1][0], top[1][1] + down)],
+                fill=side_colors[level],
+            )
+            draw.polygon(
+                [top[2], top[3], (top[3][0], top[3][1] + down), (top[2][0], top[2][1] + down)],
+                fill=(3, 19, 22, 255),
+            )
+            draw.polygon(top, fill=colors[level])
+            # Tiny highlight makes higher activity nodes read as luminous.
+            if level >= 3:
+                draw.ellipse(
+                    (cx-1, cy-lift-1, cx+1, cy-lift+1),
+                    fill=(190, 255, 224, 230),
+                )
 
     # Refresh the live stats panel while preserving the supplied composition.
     px0, py0, px1, py1 = int(1390*sx), int(175*sy), int(1660*sx), int(455*sy)
